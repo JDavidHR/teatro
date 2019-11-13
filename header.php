@@ -45,33 +45,11 @@
                           <ul class="nav navbar-nav">
                             <li class=""><a href="index.php">Inicio</a></li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cita</a>
-                                <div class="dropdown-menu " aria-labelledby="dropdown1">
-                                  <a class="dropdown-item btn" href="crear_cita.php">Crear cita</a>
-                                  <a class="dropdown-item btn" href="ver_cita.php">Ver citas activas</a>
-                                  <a class="dropdown-item btn" href="historial_cita.php">Ver historial de citas</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Medico</a>
                                 <div class="dropdown-menu " aria-labelledby="dropdown1">
-                                  <a class="dropdown-item btn" href="crear_medicos.php">Crear medico</a>
-                                  <a class="dropdown-item btn" href="ver_medico.php">Ver medicos</a>
-                                  <a class="dropdown-item btn" href="ver_medico_inactivo.php">Ver medicos inactivos</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Usuario</a>
-                                <div class="dropdown-menu " aria-labelledby="dropdown1">
-                                  <a class="dropdown-item btn" href="crear_usuario.php">Crear usuario</a>
-                                  <a class="dropdown-item btn" href="ver_usuario.php">Ver usuarios</a>
-                                  <a class="dropdown-item btn" href="ver_usuario_inactivo.php">Ver usuarios inactivos</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reportes</a>
-                                <div class="dropdown-menu " aria-labelledby="dropdown1">
-                                  <a class="dropdown-item btn" href="reportes.php">Generar reportes</a>
+                                  <a class="dropdown-item btn" href="crear_medicos.php">Ingresar nueva obra</a>
+                                  <a class="dropdown-item btn" href="ver_medico.php">Ver obras</a>
+                                  <a class="dropdown-item btn" href="ver_medico_inactivo.php">Ver obras inactivas</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
