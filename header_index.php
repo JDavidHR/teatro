@@ -29,7 +29,7 @@
             ?>
                 <!--banner-->
               <section id="banner2" class="banner">
-                <div class="bg-color2">
+                <div class="">
                   <nav class="navbar navbar-default navbar-fixed-top">
                     <div class="container">
                       <div class="col-md-12">
@@ -39,7 +39,6 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                           </button>
-                          <a class="navbar-brand" href="index.php"><img src="img/logo.png" class="img-responsive" style="width: 140px; margin-top: -16px;"></a>
                         </div>
                         <div class="collapse navbar-collapse navbar-right" id="myNavbar">
                           <ul class="nav navbar-nav">
@@ -94,79 +93,39 @@
                 </div>
               </section>
               <!--/ banner-->
-            <?php
-        }else if($_SESSION['tipousuario'] == 2){ //sesion como usuario
-            ?>
-              <!--banner-->
-            <section id="banner2" class="banner">
-                <div class="bg-color2">
-                  <nav class="navbar navbar-default navbar-fixed-top">
-                    <div class="container">
-                      <div class="col-md-12">
-                      <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                                                  <span class="icon-bar"></span>
-                                                  <span class="icon-bar"></span>
-                                                  <span class="icon-bar"></span>
-                                                </button>
-                        <a class="navbar-brand" href="index.php"><img src="img/logo.png" class="img-responsive" style="width: 140px; margin-top: -16px;"></a>
-                      </div>
-                      <div class="collapse navbar-collapse navbar-right" id="myNavbar">
-                        <ul class="nav navbar-nav">
-                            <li class=""><a href="index.php">Inicio</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cita</a>
-                                <div class="dropdown-menu " aria-labelledby="dropdown1">
-                                  <a class="dropdown-item btn" href="ver_cita.php">Ver citas activas</a>
-                                  <a class="dropdown-item btn" href="historial_cita.php">Ver historial de citas</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['nombre']?></a>
-                                <div class="dropdown-menu " aria-labelledby="dropdown1">
-                                  <a class="dropdown-item btn" href="Controlador\cerrar_sesion.php">Cerrar sesion</a>
-                                </div>
-                            </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </nav>                
-              </div>
-            </section>
-            <!--/ banner-->
-            <?php
-        }           
+      <?php
+        } 
+      ?>
+  <?php         
     }else{
-        ?>
-        <!--banner-->
-        <section id="banner2" class="banner">
-          <div class="bg-color2">
-            <nav class="navbar navbar-default navbar-fixed-top">
-              <div class="container">
-                <div class="col-md-12">
-                  <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.php"><img src="img/logo.png" class="img-responsive" style="width: 140px; margin-top: -16px;"></a>
-                  </div>
-                  <div class="collapse navbar-collapse navbar-right" id="myNavbar">
-                    <ul class="nav navbar-nav">
-                      <li class=""><a href="index.php">Inicio</a></li>
-                      <li class=""><a href="servicios.php">Servicios</a></li>
-                      <li class=""><a href="about.php">Acerca de nosotros</a></li>
-                      <li class=""><a href="login.php">Iniciar sesi&oacute;n</a></li>
-                    </ul>
-                  </div>
+  ?>
+      <!--banner-->
+      <section id="banner2" class="banner">
+        <div class="">
+          <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+              <div class="col-md-12">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+                  <ul class="nav navbar-nav">
+                    <li class=""><a href="index.php">Inicio</a></li>
+                    <li class=""><a href="servicios.php">Servicios</a></li>
+                    <li class=""><a href="about.php">Acerca de nosotros</a></li>
+                    <li class=""><a href="login.php">Iniciar sesi&oacute;n</a></li>
+                  </ul>
                 </div>
               </div>
-            </nav>
-          </div>
-        </section>
-        <!--/ banner-->
+            </div>
+          </nav>
+        </div>
+      </section>
+      <!--/ banner-->
     <?php
     }
     ?>

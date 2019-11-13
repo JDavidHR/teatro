@@ -70,7 +70,7 @@ banner
 }
 .navbar-default {
     background-color: #fff;
-    padding: 20px 0;
+    padding: 5px 0;
     transition: all 0.3s;
 }
 .navbar-default {
@@ -104,7 +104,7 @@ banner
 
 .top-nav-collapse {
     padding: 0;
-    background: rgba(28,74,90, 0.9);
+    background: rgba(55,27,8, 0.9);
 }
 
 .white, .white:hover, .white:focus
@@ -132,7 +132,7 @@ banner
 {
 	color: #fff;
     text-transform: uppercase;
-    background-color: rgba(12, 184, 182, 0.21);
+    background-color: rgba(167, 82, 24, 0.65);
 }
 .affix {
     background-color: #ffffff !important;
@@ -142,15 +142,15 @@ banner
     background-color: rgba(12, 184, 182) !important;
 }
 #banner{
-	background: url('../img/bg-banner.jpg') no-repeat fixed;
+	background: url('../img/b.jpg') no-repeat fixed;
 	background-size: cover;
 	min-height: 650px;
 	position: relative;
 }
 #banner2{
-    background: url('../img/bg-banner.jpg') no-repeat fixed;
+    background: url('../img/b.jpg') no-repeat fixed;
     background-size: cover;
-    min-height: 100px;
+    min-height: 60px;
     position: relative;
 }
 .bg-color{
@@ -159,7 +159,7 @@ banner
 }
 .bg-color2{
     background-color: RGBA(13, 70, 83, 0.78);
-    min-height: 100px;
+    min-height: 60px;
 }
 .banner-info{
 	padding-top: 190px;
@@ -444,7 +444,7 @@ contact us
 footer
 ***************************************/
 #footer{
-	background-color: #325C6A;
+	background-color: #371B08;
 }
 .ftr-tle {
     height: 50px;
