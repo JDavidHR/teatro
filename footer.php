@@ -58,7 +58,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            © Copyright Cl&iacute;nica Cotecnova. Todos los derechos reservados.
+            © Copyright Teatro Cotecnova. Todos los derechos reservados.
             <div class="credits">
               <!--
                 All the links in the footer should remain intact.
@@ -107,7 +107,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            © Copyright Cl&iacute;nica Cotecnova. Todos los derechos reservados.
+            © Copyright Teatro Cotecnova. Todos los derechos reservados.
             <div class="credits">
               <!--
                 All the links in the footer should remain intact.
@@ -157,7 +157,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            © Copyright Cl&iacute;nica Cotecnova. Todos los derechos reservados.
+            © Copyright Teatro Cotecnova. Todos los derechos reservados.
             <div class="credits">
               <!--
                 All the links in the footer should remain intact.

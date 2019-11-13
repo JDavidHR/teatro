@@ -104,8 +104,8 @@
                         <img src="img/logo.png" class="img-responsive">
                       </div>
                       <div class="banner-text text-center">
-                        <h1 class="white">¿Ya reservaste la cita a tu paciente?</h1>
-                        <p>Bienvenido a la Cl&iacute;nica Cotecnova online, aqu&iacute; te atenderemos lo m&aacute;s r&aacute;pido posible para cumplir con tus necesidades.</p>
+                        <h1 class="white" style="background-color: black;color: white;opacity: 0.70;border-radius: 10px">¿Ya sabes que función ver?</h1>
+                        <p style="background-color: black;color: white;opacity: 0.70;border-radius: 10px">Bienvenido al Teatro de Cotecnova online, aqu&iacute; te atenderemos lo m&aacute;s r&aacute;pido posible para cumplir con tus necesidades.</p>
                         <a href="crear_cita.php" class="btn btn-appoint">Crear cita</a>
                       </div>
                     </div>
@@ -157,9 +157,9 @@
                   <img src="img/logo.png" class="img-responsive">
                 </div>
                 <div class="banner-text text-center">
-                  <h1 class="white">¿Ya reservaste tu cita?</h1>
-                  <p>Bienvenido a la Cl&iacute;nica Cotecnova online, aqu&iacute; te atenderemos lo m&aacute;s r&aacute;pido posible para cumplir con tus necesidades.</p>
-                  <a href="login_teatro.php" class="btn btn-appoint">Reservar mi cita</a>
+                  <h1 class="white" style="background-color: black;color: white;opacity: 0.70;border-radius: 10px">¿Ya sabes que función ver?</h1>
+                  <p style="background-color: black;color: white;opacity: 0.70;border-radius: 10px">Bienvenido al teatro de Cotecnova online, aqu&iacute; te atenderemos lo m&aacute;s r&aacute;pido posible para cumplir con tus necesidades.</p>
+                  <a href="login.php" class="btn btn-appoint">Reservar Función</a>
                 </div>
               </div>
             </div>
