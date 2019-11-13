@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-11-2019 a las 20:53:18
+-- Tiempo de generación: 13-11-2019 a las 21:35:33
 -- Versión del servidor: 10.4.6-MariaDB
 -- Versión de PHP: 7.3.9
 
@@ -46,6 +46,28 @@ INSERT INTO `actores` (`id`, `cedula`, `nombre`, `fecha_nacimiento`, `Genero_id`
 (2, '1006741852', 'Juan Miguel', '1996-11-10', 1, 2),
 (3, '1010951753', 'Benito Velez', '1919-11-02', 1, 1),
 (4, '325124590', 'Ellen Page', '1989-09-08', 2, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `administradores`
+--
+
+CREATE TABLE `administradores` (
+  `id` int(11) NOT NULL COMMENT 'Identificador del administrador',
+  `nombres` varchar(50) COLLATE utf8_spanish_ci NOT NULL COMMENT 'Nombres del administrador',
+  `apellidos` varchar(50) COLLATE utf8_spanish_ci NOT NULL COMMENT 'Apellidos del administrador',
+  `numero_documento` varchar(50) COLLATE utf8_spanish_ci NOT NULL COMMENT 'Numero del documento',
+  `tipo_usuario_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `administradores`
+--
+
+INSERT INTO `administradores` (`id`, `nombres`, `apellidos`, `numero_documento`, `tipo_usuario_id`) VALUES
+(1, 'Natalia', 'Agudelo Valdes', '1006318241', 1),
+(2, 'Juan David', 'Hoyos Ramirez', '1006291396', 1);
 
 -- --------------------------------------------------------
 
@@ -427,6 +449,24 @@ INSERT INTO `tipo_teatro` (`id`, `tipo`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `tipo_usuario`
+--
+
+CREATE TABLE `tipo_usuario` (
+  `id` int(11) NOT NULL COMMENT 'Identificador del usuario',
+  `nombre` varchar(45) COLLATE utf8_spanish_ci NOT NULL COMMENT 'Nombre del tipo'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `tipo_usuario`
+--
+
+INSERT INTO `tipo_usuario` (`id`, `nombre`) VALUES
+(1, 'Administrador');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `universidad`
 --
 
@@ -484,6 +524,13 @@ ALTER TABLE `actores`
   ADD UNIQUE KEY `id_UNIQUE` (`id`),
   ADD KEY `fk_Actores_Genero1_idx` (`Genero_id`),
   ADD KEY `fk_Actores_Tipo_papel1_idx` (`Tipo_papel_id`);
+
+--
+-- Indices de la tabla `administradores`
+--
+ALTER TABLE `administradores`
+  ADD PRIMARY KEY (`id`,`tipo_usuario_id`) USING BTREE,
+  ADD KEY `fk_tipo_usuario_id` (`tipo_usuario_id`) USING BTREE;
 
 --
 -- Indices de la tabla `autor`
@@ -628,6 +675,12 @@ ALTER TABLE `tipo_teatro`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `tipo_usuario`
+--
+ALTER TABLE `tipo_usuario`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `universidad`
 --
 ALTER TABLE `universidad`
@@ -652,6 +705,12 @@ ALTER TABLE `versiones`
 --
 ALTER TABLE `actores`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `administradores`
+--
+ALTER TABLE `administradores`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del administrador', AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `autor`
@@ -773,6 +832,12 @@ ALTER TABLE `actores`
   ADD CONSTRAINT `fk_Actores_Tipo_papel1` FOREIGN KEY (`Tipo_papel_id`) REFERENCES `tipo_papel` (`id`) ON UPDATE CASCADE;
 
 --
+-- Filtros para la tabla `administradores`
+--
+ALTER TABLE `administradores`
+  ADD CONSTRAINT `administradores_ibfk_1` FOREIGN KEY (`tipo_usuario_id`) REFERENCES `tipo_usuario` (`id`) ON UPDATE CASCADE;
+
+--
 -- Filtros para la tabla `clientes`
 --
 ALTER TABLE `clientes`
@@ -839,6 +904,13 @@ ALTER TABLE `temporada`
   ADD CONSTRAINT `fk_Temporada_Horario1` FOREIGN KEY (`Horario_id`) REFERENCES `horario` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_Temporada_Obra1` FOREIGN KEY (`Obra_id`) REFERENCES `obra` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_Temporada_Teatro1` FOREIGN KEY (`Teatro_id`) REFERENCES `teatro` (`id`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `versiones`
+--
+ALTER TABLE `versiones`
+  ADD CONSTRAINT `versiones_ibfk_1` FOREIGN KEY (`Obra_id`) REFERENCES `obra` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `versiones_ibfk_2` FOREIGN KEY (`Director_id`) REFERENCES `director` (`id`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
