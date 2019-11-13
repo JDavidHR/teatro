@@ -138,7 +138,7 @@
                     <li class=""><a href="index.php">Inicio</a></li>
                     <li class=""><a href="servicios.php">Servicios</a></li>
                     <li class=""><a href="about.php">Acerca de nosotros</a></li>
-                    <li class=""><a href="login.php">Iniciar sesi&oacute;n</a></li>
+                    <li class=""><a href="login_teatro.php">Iniciar sesi&oacute;n</a></li>
                   </ul>
                 </div>
               </div>
@@ -159,7 +159,7 @@
                 <div class="banner-text text-center">
                   <h1 class="white">¿Ya reservaste tu cita?</h1>
                   <p>Bienvenido a la Cl&iacute;nica Cotecnova online, aqu&iacute; te atenderemos lo m&aacute;s r&aacute;pido posible para cumplir con tus necesidades.</p>
-                  <a href="login.php" class="btn btn-appoint">Reservar mi cita</a>
+                  <a href="login_teatro.php" class="btn btn-appoint">Reservar mi cita</a>
                 </div>
               </div>
             </div>

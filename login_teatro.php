@@ -27,7 +27,7 @@
       <div class="row">
         <div class="col-md-4 login-sec">
           <h2 class="text-center">Bienvenido</h2>
-          <form class="login-form" action="controlador/login_administrador.php" method="POST">
+          <form class="login-form" action="Controlador/loginvalidacion.php" method="POST">
             <div class="form-group">
               <label for="exampleInputEmail1" class="text-uppercase">Documento</label>
               <input type="text" class="form-control" placeholder="No. Documento" name="doc" required="">           

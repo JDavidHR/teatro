@@ -2,8 +2,10 @@
 <html>
 <head>
   <title>Login</title>
-  <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" id="bootstrap-css">
   <link rel="stylesheet" type="text/css" href="css/style_login.css">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
     <div class="col-lg-offset-3 col-lg-6">
@@ -16,7 +18,7 @@
         
         //lleno las variables
         $usuario = $_POST['doc'];
-        $pass = md5($_POST['pass']);
+        $pass = $_POST['pass'];
         $tipousuario = $_POST['tipousuario'];
         //instancio la clase MySQL
         $mysql = new MySQL;
