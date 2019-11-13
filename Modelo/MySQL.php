@@ -8,7 +8,7 @@ class MySQL{
     private $user = "root";
     private $password = "";
     private $puerto = "3306";
-    private $database = "clinica_cotecnova";
+    private $database = "teatro";
     
     private $conexion;
     
@@ -34,9 +34,10 @@ class MySQL{
         //retorno del resultado de la consulta
         return $this->resultadoConsulta; 
     }
-
+/*
     public function crearBackup(){
         include '../Controlador/funcionBackup.php';
         backDb($this->hostname, $this->user, $this->password, $this->database);
     }
+    */
 }
