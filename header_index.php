@@ -44,11 +44,17 @@
                           <ul class="nav navbar-nav">
                             <li class=""><a href="index.php">Inicio</a></li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Medico</a>
+                                <a class="nav-link dropdown-toggle" href="" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Obras</a>
                                 <div class="dropdown-menu " aria-labelledby="dropdown1">
                                   <a class="dropdown-item btn" href="crear_medicos.php">Ingresar nueva obra</a>
                                   <a class="dropdown-item btn" href="ver_medico.php">Ver obras</a>
                                   <a class="dropdown-item btn" href="ver_medico_inactivo.php">Ver obras inactivas</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Backup</a>
+                                <div class="dropdown-menu " aria-labelledby="dropdown1">
+                                  <a class="dropdown-item btn" href="Controlador\backup.php">Crear backup</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
