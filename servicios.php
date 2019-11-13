@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cl&iacute;nica Cotecnova - Servicios</title>
+  <title>Teatro Cotecnova - Servicios</title>
   <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
   <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
   <!-- Llamado de css -->
@@ -41,16 +41,16 @@
         <div class="col-md-4 col-sm-4">
           <div class="service-info">
             <div class="icon">
-              <i class="fa fa-stethoscope"></i>
+              <i class="fa fa-calendar"></i>
             </div>
             <div class="icon-info">
-              <h4>Atencion 7/24</h4>
+              <h4>Agendar Cita</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
           </div>
           <div class="service-info">
             <div class="icon">
-              <i class="fa fa-ambulance"></i>
+              <i class="fa fa-bell"></i>
             </div>
             <div class="icon-info">
               <h4>Servicios de Emergencia</h4>
@@ -61,19 +61,19 @@
         <div class="col-md-4 col-sm-4">
           <div class="service-info">
             <div class="icon">
-              <i class="fa fa-user-md"></i>
+              <i class="fa fa-american-sign-language-interpreting"></i>
             </div>
             <div class="icon-info">
-              <h4>Asistencia Medica</h4>
+              <h4>Asistencia</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
           </div>
           <div class="service-info">
             <div class="icon">
-              <i class="fa fa-medkit"></i>
+              <i class="fa fa-bookmark"></i>
             </div>
             <div class="icon-info">
-              <h4>Productos Premium</h4>
+              <h4>Entradas VIP</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
           </div>
