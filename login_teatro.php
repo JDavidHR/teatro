@@ -39,7 +39,7 @@
 
                   
           
-            <img class="d-block img-fluid" src="image/teatro_login.jpg" alt="First slide">
+            <img class="d-block img-fluid" src="img/teatro_login.jpg" alt="First slide">
             
               <div class="banner-text">
                   <h2 style="color: white;">Proximo Evento!</h2>
