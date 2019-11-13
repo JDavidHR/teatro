@@ -1,0 +1,11 @@
+202 iconos
+
+447 color footer
+
+107 color barra
+
+135 color del boton de la barra
+
+tamaños del banner y demás
+73
+153
