@@ -116,8 +116,8 @@
                   <ul class="nav navbar-nav">
                     <li class=""><a href="index.php">Inicio</a></li>
                     <li class=""><a href="servicios.php">Servicios</a></li>
-                    <li class=""><a href="about.php">Acerca de nosotros</a></li>
-                    <li class=""><a href="login.php">Iniciar sesi&oacute;n</a></li>
+                    <li class=""><a href="about.php">Funciones</a></li>
+                    <li class=""><a href="login_teatro.php">Iniciar sesi&oacute;n</a></li>
                   </ul>
                 </div>
               </div>

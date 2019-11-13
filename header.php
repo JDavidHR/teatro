@@ -137,7 +137,7 @@
                   <ul class="nav navbar-nav">
                     <li class=""><a href="index.php">Inicio</a></li>
                     <li class=""><a href="servicios.php">Servicios</a></li>
-                    <li class=""><a href="about.php">Acerca de nosotros</a></li>
+                    <li class=""><a href="about.php">Funciones</a></li>
                     <li class=""><a href="login_teatro.php">Iniciar sesi&oacute;n</a></li>
                   </ul>
                 </div>
@@ -159,7 +159,7 @@
                 <div class="banner-text text-center">
                   <h1 class="white" style="background-color: black;color: white;opacity: 0.70;border-radius: 10px">¿Ya sabes que función ver?</h1>
                   <p style="background-color: black;color: white;opacity: 0.70;border-radius: 10px">Bienvenido al teatro de Cotecnova online, aqu&iacute; te atenderemos lo m&aacute;s r&aacute;pido posible para cumplir con tus necesidades.</p>
-                  <a href="login.php" class="btn btn-appoint">Reservar Función</a>
+                  <a href="login_teatro.php" class="btn btn-appoint">Reservar Función</a>
                 </div>
               </div>
             </div>

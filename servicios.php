@@ -48,15 +48,7 @@
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
           </div>
-          <div class="service-info">
-            <div class="icon">
-              <i class="fa fa-bell"></i>
-            </div>
-            <div class="icon-info">
-              <h4>Servicios de Emergencia</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-          </div>
+          
         </div>
         <div class="col-md-4 col-sm-4">
           <div class="service-info">
@@ -68,20 +60,58 @@
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
           </div>
-          <div class="service-info">
-            <div class="icon">
-              <i class="fa fa-bookmark"></i>
-            </div>
-            <div class="icon-info">
-              <h4>Entradas VIP</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
   </section>
   <!--/ service-->
+
+  <section id="service" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="ser-title">see what patients are saying?</h2>
+          <hr class="botm-line">
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="testi-details">
+            <!-- Paragraph -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="testi-info">
+            <!-- User Image -->
+            <a href="#"><img src="img/thumb.png" alt="" class="img-responsive"></a>
+            <!-- User Name -->
+            <h3>Alex<span>Texas</span></h3>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="testi-details">
+            <!-- Paragraph -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="testi-info">
+            <!-- User Image -->
+            <a href="#"><img src="img/thumb.png" alt="" class="img-responsive"></a>
+            <!-- User Name -->
+            <h3>Alex<span>Texas</span></h3>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="testi-details">
+            <!-- Paragraph -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="testi-info">
+            <!-- User Image -->
+            <a href="#"><img src="img/thumb.png" alt="" class="img-responsive"></a>
+            <!-- User Name -->
+            <h3>Alex<span>Texas</span></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <!--footer-->
   <!-- Llamado de plantilla footer -->
   <div id="footer">
