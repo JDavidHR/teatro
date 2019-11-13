@@ -16,23 +16,23 @@
         <div class="row">
           <div class="col-md-4 login-sec">
               <h2 class="text-center">Bienvenido</h2>
-              <form class="login-form">
-        <div class="form-group">
-          <label for="exampleInputEmail1" class="text-uppercase">Documento</label>
-          <input type="text" class="form-control" placeholder="No. Documento">
-          
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1" class="text-uppercase">Password</label>
-          <input type="password" class="form-control" placeholder="Password">
-        </div>
-        
-        
-          <div class="form-check">
-          <button type="submit" class="btn btn-login float-right">Iniciar sesión</button>
-        </div>
-        
-      </form>
+              <form class="login-form" action="controlador/login_teatro.php" method="POST">
+                <div class="form-group">
+                  <label for="exampleInputEmail1" class="text-uppercase">Documento</label>
+                  <input type="text" class="form-control" placeholder="No. Documento" name="doc" required="">
+                  
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1" class="text-uppercase">Password</label>
+                  <input type="password" class="form-control" placeholder="Password" name="pass" required="">
+                </div>
+                
+                
+                  <div class="form-check">
+                  <button type="submit" class="btn btn-login float-right">Iniciar sesión</button>
+                </div>
+                
+              </form>
       
           </div>
           <div class="col-md-8 banner-sec">
