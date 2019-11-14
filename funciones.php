@@ -44,7 +44,7 @@
         </div>
         <div class="col-md-3 col-sm-3 col-xs-6">
           <div class="thumbnail">
-            <img src="img/te1.jpg" alt="..." class="team-img">
+            <img src="img/r.jpg" alt="..." class="team-img">
             <div class="caption">
               <h3>lorem</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -58,9 +58,9 @@
         </div>
         <div class="col-md-3 col-sm-3 col-xs-6">
           <div class="thumbnail">
-            <img src="img/te2.jpg" alt="..." class="team-img">
+            <img src="img/r2.jpg" alt="..." class="team-img">
             <div class="caption">
-              <h3>lorem</h3>
+              <h3>Romeo y Julieta</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
               quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -72,9 +72,9 @@
         </div>
         <div class="col-md-3 col-sm-3 col-xs-6">
           <div class="thumbnail">
-            <img src="img/te3.jpg" alt="..." class="team-img">
+            <img src="img/r3.jpg" alt="..." class="team-img">
             <div class="caption">
-              <h3>lorem</h3>
+              <h3>Sueño de una noche de verano</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
               quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -88,7 +88,7 @@
           <div class="thumbnail">
             <img src="img/te4.jpg" alt="..." class="team-img">
             <div class="caption">
-              <h3>lorem</h3>
+              <h3>La casa de Bernarda Alba</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
               quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
