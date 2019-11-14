@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-11-2019 a las 21:35:33
+-- Tiempo de generación: 14-11-2019 a las 01:10:50
 -- Versión del servidor: 10.4.6-MariaDB
 -- Versión de PHP: 7.3.9
 
@@ -58,16 +58,18 @@ CREATE TABLE `administradores` (
   `nombres` varchar(50) COLLATE utf8_spanish_ci NOT NULL COMMENT 'Nombres del administrador',
   `apellidos` varchar(50) COLLATE utf8_spanish_ci NOT NULL COMMENT 'Apellidos del administrador',
   `numero_documento` varchar(50) COLLATE utf8_spanish_ci NOT NULL COMMENT 'Numero del documento',
-  `tipo_usuario_id` int(11) NOT NULL
+  `password` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
+  `tipo_usuario_id` int(11) NOT NULL,
+  `estado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `administradores`
 --
 
-INSERT INTO `administradores` (`id`, `nombres`, `apellidos`, `numero_documento`, `tipo_usuario_id`) VALUES
-(1, 'Natalia', 'Agudelo Valdes', '1006318241', 1),
-(2, 'Juan David', 'Hoyos Ramirez', '1006291396', 1);
+INSERT INTO `administradores` (`id`, `nombres`, `apellidos`, `numero_documento`, `password`, `tipo_usuario_id`, `estado`) VALUES
+(1, 'Natalia', 'Agudelo Valdes', '1006318241', '123456', 1, 1),
+(2, 'Juan David', 'Hoyos Ramirez', '1006291396', '123456', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -227,17 +229,18 @@ CREATE TABLE `obra` (
   `nombre` varchar(45) COLLATE utf8_spanish_ci NOT NULL,
   `Autor_id` int(11) NOT NULL,
   `Tipo_obra_id` int(11) NOT NULL,
-  `Director_id` int(11) NOT NULL
+  `Director_id` int(11) NOT NULL,
+  `estado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `obra`
 --
 
-INSERT INTO `obra` (`id`, `nombre`, `Autor_id`, `Tipo_obra_id`, `Director_id`) VALUES
-(1, 'Romeo y Julieta', 1, 2, 1),
-(2, 'Sueño de una noche de verano', 1, 1, 2),
-(6, 'La casa de Bernarda Alba', 2, 5, 3);
+INSERT INTO `obra` (`id`, `nombre`, `Autor_id`, `Tipo_obra_id`, `Director_id`, `estado`) VALUES
+(1, 'Romeo y Julieta', 1, 2, 1, 1),
+(2, 'Sueño de una noche de verano', 1, 1, 2, 1),
+(6, 'La casa de Bernarda Alba', 2, 5, 3, 1);
 
 -- --------------------------------------------------------
 
