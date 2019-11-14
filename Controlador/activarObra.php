@@ -23,26 +23,26 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
     require_once '../Modelo/MySQL.php';
     
     //declaracion de variables con sus respectivas asignaciones
-    $idMedico = $_GET['id'];    
+    $idObra = $_GET['id'];    
     //nueva "archivo" MySQL
     $mysql = new MySQL;
     //llamado a funcion conectar
     $mysql->conectar();
     
     //variable que ejecutara la funcion consulta, pero en este caso, sera un eliminar usuario actualizando su estado 1. Activo 2.Inactivo
-    $ActualizarEstado = $mysql->efectuarConsulta("update medicos set estado = 1 where id_medico =".$idMedico.""); 
+    $ActualizarEstado = $mysql->efectuarConsulta("update obra set estado = 1 where id =".$idObra.""); 
     //Desconecto la conexion de la bD
     $mysql->desconectar(); 
     //decision para comprobar si se ejecuto, se redirige al index principal
     if($ActualizarEstado){
         //redireccion
-       header("Location: ../ver_medico.php");
+       header("Location: ../ver_obra.php");
     } else {
         //mensaje de error
 
-        echo "<div class=\"alert alert-warning alert-dismissible\"><a href=\"../ver_usuario_inactivo.php\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Alerta!</strong> No se ha podido habilitar al medico.</div>";
+        echo "<div class=\"alert alert-warning alert-dismissible\"><a href=\"../ver_obra_inactivo.php\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Alerta!</strong> No se ha podido habilitar la obra.</div>";
         //redireccion
-        header( "refresh:3;url=../ver_medico_inactivo.php" );
+        header( "refresh:3;url=../ver_obra_inactivo.php" );
     }
 }else{
     header("Location: ../index.php");

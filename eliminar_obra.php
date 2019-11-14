@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cl&iacute;nica Cotecnova - Eliminar medicos</title>
+  <title>Teatro Cotecnova</title>
   <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
   <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
 
@@ -31,7 +31,7 @@
     ?>
     </div>  
     <?php
-            //trae id del medico 
+            //trae id de la obra 
             $id = $_GET['id'];
             //llamado al archivo MySQL
             require_once 'Modelo/MySQL.php';
@@ -40,12 +40,12 @@
             //funcion conectar
             $mysql->conectar();
             //consulta de toda la informacion
-            $seleccionInformacion = $mysql->efectuarConsulta("select clinica_cotecnova.medicos.numero_documento, clinica_cotecnova.medicos.nombre_completo from medicos where id_medico = ".$id."");
+            $seleccionInformacion = $mysql->efectuarConsulta("select teatro.obra.id as id_obra, teatro.obra.nombre from obra where id = ".$id."");
             //funcion desconectar
             $mysql->desconectar();    
             while ($resultado= mysqli_fetch_assoc($seleccionInformacion)){
-                $numeroDocumento = $resultado['numero_documento'];
-                $nombre_completo = $resultado['nombre_completo'];
+                $idObra = $resultado['id_obra'];
+                $nombre = $resultado['nombre'];
             }  
     ?>
     <!--service-->
@@ -62,30 +62,34 @@
           <div class="card">
             <!-- Tab panes -->
             <div class="card-body">
-              <form class="form-horizontal form-material" method="post" action="Controlador/eliminarMedico.php?id=<?php echo $id;?>">
-                    <div class="form-group">
-                  <label class="col-sm-12">¿Esta seguro de eliminar el usuario?</label>
-                  <div class="col-md-12">
-                        <!-- Se traen los datos y se imprimen en las opciones del select -->
-                        <input type="text" disabled="" value="<?php echo $nombre_completo?>" class="form-control form-control-line">
-                        
+              <form class="form-horizontal form-material" method="post" action="Controlador/eliminarObra.php?id=<?php echo $id;?>">
+                  <div class="form-group">
+                    <label class="col-sm-12">Id de la obra</label>
+                    <div class="col-md-12">
+                      <!-- Se traen los datos y se imprimen en las opciones del select -->
+                      <input type="text" disabled="" value="<?php echo $idObra?>" class="form-control form-control-line">
                     </div>
-                  </div>         
-                 <div class="form-group">
-                  <label class="col-sm-12">Numero de documento del usuario</label>            
-                  <div class="col-md-12">
-                        <!-- Se traen los datos y se imprimen en las opciones del select -->
-                        <input type="text" disabled=" "value="<?php echo $numeroDocumento?>" class="form-control form-control-line">
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-sm-12">Nombre de la obra</label>            
+                    <div class="col-md-12">
+                      <!-- Se traen los datos y se imprimen en las opciones del select -->
+                      <input type="text" disabled=" "value="<?php echo $nombre?>" class="form-control form-control-line">
                     </div>
-                </div>    
-                <div class="form-group">
-                  <div class="col-sm-2 col-md-2">
-                    <button class="btn btn-success" >Eliminar</button>
                   </div>
-                  <div class="col-sm-10 col-md-4">
-                      <a href="ver_medico.php" class="btn btn-danger">Cancelar</a>
+
+                  <div class="form-group">
+                    <label class="col-sm-12">¿Esta seguro de eliminar la obra?</label>
+                    <br>
+                    <br>
+                    <div class="col-sm-2 col-md-2">
+                      <button class="btn btn-success" >Eliminar</button>
+                    </div>
+                    <div class="col-sm-10 col-md-4">
+                        <a href="ver_obra.php" class="btn btn-danger">Cancelar</a>
+                    </div>
                   </div>
-                </div>
               </form>
             </div>
           </div>
