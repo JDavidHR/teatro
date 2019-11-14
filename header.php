@@ -48,7 +48,7 @@
                                 <a class="nav-link dropdown-toggle" href="" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Obras</a>
                                 <div class="dropdown-menu " aria-labelledby="dropdown1">
                                   <a class="dropdown-item btn" href="crear_medicos.php">Ingresar nueva obra</a>
-                                  <a class="dropdown-item btn" href="ver_medico.php">Ver obras</a>
+                                  <a class="dropdown-item btn" href="ver_obra.php">Ver obras</a>
                                   <a class="dropdown-item btn" href="ver_medico_inactivo.php">Ver obras inactivas</a>
                                 </div>
                             </li>
@@ -84,7 +84,7 @@
                       <div class="banner-text text-center">
                         <h1 class="white" style="background-color: black;color: white;opacity: 0.70;border-radius: 10px">¿Ya sabes que función ver?</h1>
                         <p style="background-color: black;color: white;opacity: 0.70;border-radius: 10px">Bienvenido al Teatro de Cotecnova online, aqu&iacute; te atenderemos lo m&aacute;s r&aacute;pido posible para cumplir con tus necesidades.</p>
-                        <a href="crear_cita.php" class="btn btn-appoint">Crear cita</a>
+                        <a href="crear_cita.php" class="btn btn-appoint">Ingresar nueva obra</a>
                       </div>
                     </div>
                   </div>
@@ -116,6 +116,7 @@
                     <li class=""><a href="index.php">Inicio</a></li>
                     <li class=""><a href="servicios.php">Servicios</a></li>
                     <li class=""><a href="about.php">Funciones</a></li>
+                    <li class=""><a href="comprar.php">Comprar tickets</a></li>
                     <li class=""><a href="login_teatro.php">Iniciar sesi&oacute;n</a></li>
                   </ul>
                 </div>
@@ -137,7 +138,7 @@
                 <div class="banner-text text-center">
                   <h1 class="white" style="background-color: black;color: white;opacity: 0.70;border-radius: 10px">¿Ya sabes que función ver?</h1>
                   <p style="background-color: black;color: white;opacity: 0.70;border-radius: 10px">Bienvenido al teatro de Cotecnova online, aqu&iacute; te atenderemos lo m&aacute;s r&aacute;pido posible para cumplir con tus necesidades.</p>
-                  <a href="login_teatro.php" class="btn btn-appoint">Reservar Función</a>
+                  <a href="#" class="btn btn-appoint">Reservar Función</a>
                 </div>
               </div>
             </div>

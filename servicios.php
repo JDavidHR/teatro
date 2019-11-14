@@ -44,7 +44,7 @@
               <i class="fa fa-calendar"></i>
             </div>
             <div class="icon-info">
-              <h4>Agendar Cita</h4>
+              <h4>Agendar funcion</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
           </div>
@@ -70,7 +70,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="ser-title">see what patients are saying?</h2>
+          <h2 class="ser-title">Qué dicen acerca de nuestras funciones?</h2>
           <hr class="botm-line">
         </div>
         <div class="col-md-4 col-sm-4">
@@ -92,7 +92,7 @@
           </div>
           <div class="testi-info">
             <!-- User Image -->
-            <a href="#"><img src="img/thumb.png" alt="" class="img-responsive"></a>
+            <a href="#"><img src="img/thumb2.png" alt="" class="img-responsive"></a>
             <!-- User Name -->
             <h3>Alex<span>Texas</span></h3>
           </div>
@@ -104,7 +104,7 @@
           </div>
           <div class="testi-info">
             <!-- User Image -->
-            <a href="#"><img src="img/thumb.png" alt="" class="img-responsive"></a>
+            <a href="#"><img src="img/thumb3.png" alt="" class="img-responsive"></a>
             <!-- User Name -->
             <h3>Alex<span>Texas</span></h3>
           </div>

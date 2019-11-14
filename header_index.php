@@ -47,7 +47,7 @@
                                 <a class="nav-link dropdown-toggle" href="" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Obras</a>
                                 <div class="dropdown-menu " aria-labelledby="dropdown1">
                                   <a class="dropdown-item btn" href="crear_medicos.php">Ingresar nueva obra</a>
-                                  <a class="dropdown-item btn" href="ver_medico.php">Ver obras</a>
+                                  <a class="dropdown-item btn" href="ver_obra.php">Ver obras</a>
                                   <a class="dropdown-item btn" href="ver_medico_inactivo.php">Ver obras inactivas</a>
                                 </div>
                             </li>
@@ -95,6 +95,7 @@
                     <li class=""><a href="index.php">Inicio</a></li>
                     <li class=""><a href="servicios.php">Servicios</a></li>
                     <li class=""><a href="about.php">Funciones</a></li>
+                    <li class=""><a href="comprar.php">Comprar tickets</a></li>
                     <li class=""><a href="login_teatro.php">Iniciar sesi&oacute;n</a></li>
                   </ul>
                 </div>

@@ -59,7 +59,7 @@
             <!-- Tab panes -->
             <div class="card-body">
                 <form class="form-horizontal form-material">
-                <table class="table table-hover" id="ver_obra">
+                <table class="table table-hover" id="ver_medico">
                     <thead>
                         <tr>
                             <th scope="col">Nombre de la obra</th>
@@ -120,7 +120,7 @@
     <script src="js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready( function () {
-        $('#ver_obra').DataTable();
+        $('#ver_medico').DataTable();
     } );
     </script>
     <script src="js/bootstrap.min.js"></script>
