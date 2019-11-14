@@ -17,44 +17,29 @@
     <div class="col-lg-offset-3 col-lg-6">
 <?php
     //Comprobar que los campos no esten vacios   
-    if(isset($_POST['enviar']) && !empty($_POST['documentoPaciente']) &&
-        !empty($_POST['documentoMedico']) && !empty($_POST['fechaCita']) &&
-        !empty($_POST['horaCita']) && !empty($_POST['motivoCita']))
+    if(isset($_POST['enviar']) && !empty($_POST['nombre_obra']) &&
+        !empty($_POST['autor']) && !empty($_POST['obra']) &&
+        !empty($_POST['director']))
     {
         //Llamar al archivo MySQL
-        require_once '../Modelo/MySQL.php';
+        require_once '../Modelo/MySQL2.php';
             
         //Recuperar datos del formulario (crear_cita.php)    
-        $documentoPaciente = $_POST['documentoPaciente'];
-        $documentoMedico = $_POST['documentoMedico'];
-        $fechaCita = $_POST['fechaCita'];
-        $horaCita = $_POST['horaCita'];
-        $motivoCita = $_POST['motivoCita'];
+        $nombre = $_POST['nombre_obra'];
+        $autor = $_POST['autor'];
+        $obra = $_POST['obra'];
+        $director = $_POST['director'];
+        
 
-        //Concatenar la fecha y la hora (aaaa-mm-dd hh:mm)
-        $fechaHora = $fechaCita." ".$horaCita;
         
         //Nuevo archivo MySQL y se llama a la funcion conectar()
         $mysql = new MySQL;
         $mysql->conectar();
 
-        //Consultar id de usuarios y medicos
-        $id_medico = $mysql->efectuarConsulta("select id_medico from clinica_cotecnova.medicos where numero_documento = ".$documentoMedico.""); 
-        $id_usuario = $mysql->efectuarConsulta("select id_usuario from clinica_cotecnova.usuarios where numero_documento = ".$documentoPaciente."");
-        
-        //ciclos while que sirven para traer los respectivos id
-        while($resultado = mysqli_fetch_assoc($id_medico))
-        {
-            $idMedico = $resultado['id_medico']; 
-        }
-
-        while($resultado = mysqli_fetch_assoc($id_usuario))
-        {
-            $idUsuario = $resultado['id_usuario']; 
-        }
+      
         
         //Variable para efectuar la consulta SQL, en este caso, insertar datos en la tabla citas
-        $insertarCitai = $mysql->efectuarConsulta("insert into clinica_cotecnova.citas(fecha_hora, motivo_consulta, usuario_id, medico_id, estado) values('".$fechaHora."','".$motivoCita."',".$idUsuario.",".$idMedico.", 1)"); 
+        $insertarCitai = $mysql->efectuarConsulta("insert into teatro.obra(nombre,Autor_id,Tipo_obra_id,Director_id,estado) VALUES ('".$nombre."','".$autor."','".$obra."','".$director."',1)"); 
         
          //Desconecto la conexion de la bD
         $mysql->desconectar();
@@ -62,25 +47,19 @@
         //Si se efectuo correctamente la consulta se redirige al index
         if($insertarCitai){
            //impresion de mensajes personalizados
-           echo "<div class=\"alert alert-success alert-dismissible\"><a href=\"../ver_cita.php\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Felicidades!</strong>La cita ha sido creada correctamente.</div>";
+           echo "<div class=\"alert alert-success alert-dismissible\"><a href=\"../ver_cita.php\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Felicidades!</strong>La obra ha sido creada correctamente.</div>";
            //redireccion
-           header( "refresh:3;url=../ver_cita.php" ); 
+           header( "refresh:3;url=../ver_obra.php" ); 
         }
         //Sino da mensaje de error 
         else {
             //mensaje de error personalizado
-           echo "<div class=\"alert alert-warning alert-dismissible\"><a href=\"../crear_cita.php\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Alerta!</strong>No se ha podido crear la cita.</div>";
+           echo "<div class=\"alert alert-warning alert-dismissible\"><a href=\"../crear_cita.php\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Alerta!</strong>No se ha podido añadir la obra.</div>";
            //redireccion
            header( "refresh:3;url=../crear_cita.php" );      
         }
     }
-    //Si algun campo está vacio de redirige a la pagina del formulario
-    else
-    {
-    echo "<div class=\"alert alert-warning alert-dismissible\"><a href=\"../crear_cita.php\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Alerta!</strong>No se han enviado todos los datos necesarios.</div>";
-    //redireccion
-    header( "refresh:3;url=../crear_cita.php" );  
-    }
+    
 ?>
   </div>
   <!-- Llamado de los respectivos scripts -->
