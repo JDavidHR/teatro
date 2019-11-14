@@ -24,11 +24,11 @@ if(isset($_POST['enviar']) && !empty($_GET['id']) && !empty($_POST['nombreComple
     require_once '../Modelo/MySQL.php';
     
     //declaracion de variables con sus respectivas asignaciones
-    $idMedico = $_GET['id'];
-    $nombreCompleto = $_POST['nombreCompleto'];
-    $apellidos = $_POST['apellidos'];
-    $estadoCivil = $_POST['estadoCivil'];
-    $tipoMedico = $_POST['tipoMedico'];
+    $id = $_GET['id'];
+    $nombreObra = $_POST[''];
+    $nombreAutor = $_POST[''];
+    $TipoObra = $_POST[''];
+    $nombreDirector = $_POST[''];
     
     //nueva "archivo" MySQL
     $mysql = new MySQL;
@@ -36,19 +36,19 @@ if(isset($_POST['enviar']) && !empty($_GET['id']) && !empty($_POST['nombreComple
     $mysql->conectar();
     
     //variable que ejecutara la funcion consulta, pero en este caso, no usamos select sino insert para meter los datos a la respectiva table
-    $actualizar = $mysql->efectuarConsulta("Update clinica_cotecnova.medicos set nombre_completo = '".$nombreCompleto."', apellidos = '".$apellidos."', estado_civil_id = ".$estadoCivil.", tipos_medicos_id = '".$tipoMedico."' where id_medico =".$idMedico.""); 
+    $actualizar = $mysql->efectuarConsulta("Update teatro.obra.nombre = '".$nombreAutor."', teatro.obra.Autor_id = '".$nombreAutor."', teatro.obra.Tipo_obra_id = ".$TipoObra.", teatro.obra.Director_id = '".$nombreDirector."' where teatro.obra.id =".$id.""); 
     //Desconecto la conexion de la bD
     $mysql->desconectar();
     //decision para comprobar si se ejecuto, se redirige al index principal
     if($actualizar){
       //impresion de mensaje personalizado
        echo "<div class=\"alert alert-success alert-dismissible\"><a href=\"../ver_medico.php\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Felicidades!</strong>El medico ha sido actualizado correctamente.</div>";
-       header( "refresh:3;url=../ver_medico.php" ); 
+       header( "refresh:3;url=../ver_obra.php" ); 
     } else {
         //mensaje de error personalizado
         echo "<div class=\"alert alert-warning alert-dismissible\"><a href=\"../ver_medico.php\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Alerta!</strong>No se ha podido actualizar al medico.</div>";
         //redireccion
-        header( "refresh:3;url=../ver_medico.php" );         
+        header( "refresh:3;url=../ver_obra.php" );         
     }
 }else{
   //impresion de mensaje personalizado
