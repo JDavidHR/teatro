@@ -78,13 +78,13 @@
                 <div class="form-group">
                   <label class="col-sm-12">Nombre</label>            
                   <div class="col-md-12">
-                      <input type="text" value="<?php echo $nombreObra?>" class="form-control form-control-line" name="numeroDocumento" required="" onkeypress="return sololetras(event)">
+                      <input type="text" value="<?php echo $nombreObra?>" class="form-control form-control-line" name="nombreObra" required="" onkeypress="return sololetras(event)">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-md-12">Autor</label>
                   <div class="col-md-12">
-                      <input type="text" value="<?php echo $nombreAutor?>" class="form-control form-control-line" name="nombreCompleto" onkeypress="return sololetras(event)">
+                      <input type="text" value="<?php echo $nombreAutor?>" class="form-control form-control-line" name="nombreAutor" onkeypress="return sololetras(event)">
                   </div>
                 </div>
                 <div class="form-group">                  
