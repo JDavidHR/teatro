@@ -40,38 +40,22 @@
     $mysql->conectar();
     //consulta de toda la informacion
     $seleccionInformacion = $mysql->efectuarConsulta("SELECT 
-    clinica_cotecnova.tipos_documentos.id_tipo_documento,
-    clinica_cotecnova.tipos_documentos.nombre as tipo_documento, 
-    clinica_cotecnova.medicos.numero_documento, 
-    clinica_cotecnova.medicos.id_medico, 
-    clinica_cotecnova.medicos.nombre_completo, 
-    clinica_cotecnova.medicos.apellidos, 
-    clinica_cotecnova.estados_civiles.id_estado_civil,
-    clinica_cotecnova.estados_civiles.nombre as estado, 
-    clinica_cotecnova.medicos.tipos_medicos_id,
-    clinica_cotecnova.tipos_medicos.id_tipo_medico,
-    clinica_cotecnova.tipos_medicos.nombre as nombreMedico,
-    clinica_cotecnova.medicos.contrasena  
-    FROM medicos 
-    INNER JOIN tipos_documentos on clinica_cotecnova.medicos.tipo_documento_id = clinica_cotecnova.tipos_documentos.id_tipo_documento 
-    INNER JOIN estados_civiles on clinica_cotecnova.medicos.estado_civil_id = clinica_cotecnova.estados_civiles.id_estado_civil 
-    INNER JOIN tipos_medicos on clinica_cotecnova.medicos.tipos_medicos_id = clinica_cotecnova.tipos_medicos.id_tipo_medico
-    WHERE id_medico = ".$id."");  
+    teatro.obra.id, teatro.obra.nombre as nombre, teatro.autor.nombre as autor, teatro.autor.id as id_autor, teatro.director.id as id_director, teatro.tipo_obra.id as id_tipo_obra, 
+    teatro.tipo_obra.nombre as tipo, teatro.director.nombre as director FROM obra 
+     JOIN autor on teatro.obra.Autor_id = teatro.autor.id JOIN tipo_obra on teatro.obra.Tipo_obra_id = teatro.tipo_obra.id JOIN director on teatro.obra.Director_id = teatro.director.id
+    WHERE teatro.obra.id = ".$id."");  
     while ($resultado= mysqli_fetch_assoc($seleccionInformacion)){
-      $id_medico = $resultado['id_medico'];
-      $id_tipo_documento = $resultado['id_tipo_documento'];
-      $tipo_documento = $resultado['tipo_documento'];
-      $numeroDocumento = $resultado['numero_documento'];
-      $nombre_completo = $resultado['nombre_completo'];
-      $apellidos = $resultado['apellidos'];
-      $id_estado = $resultado['id_estado_civil'];
-      $estado = $resultado['estado'];
-      $tipoMedico = $resultado['tipos_medicos_id'];
-      $nombreMedico = $resultado['nombreMedico'];
-      $contrasena = $resultado['contrasena'];        
+      $nombreObra = $resultado['nombre'];
+      $nombreAutor = $resultado['autor'];
+      $tipoObra = $resultado['tipo'];
+      $nombreDirector = $resultado['director'];
+      $id_director = $resultado['id_director'];
+      $id_autor = $resultado['id_autor'];
+      $id_tipo_obra = $resultado['id_tipo_obra'];
     } 
-    $seleccionEstado = $mysql->efectuarConsulta("select clinica_cotecnova.estados_civiles.id_estado_civil, clinica_cotecnova.estados_civiles.nombre from estados_civiles");
-    $seleccionTipo = $mysql->efectuarConsulta("select clinica_cotecnova.tipos_medicos.id_tipo_medico, clinica_cotecnova.tipos_medicos.nombre from tipos_medicos");
+    $seleccionAutor = $mysql->efectuarConsulta("SELECT teatro.autor.id,teatro.autor.nombre from autor");
+    $seleccionTipoObra = $mysql->efectuarConsulta("SELECT teatro.tipo_obra.id,teatro.tipo_obra.nombre from tipo_obra");
+    $seleccionDirector = $mysql->efectuarConsulta("SELECT teatro.director.id,teatro.director.nombre from director");
     //funcion desconectar
     $mysql->desconectar();    
   ?>
@@ -90,61 +74,47 @@
           <div class="card">
             <!-- Tab panes -->
             <div class="card-body">
-              <form class="form-horizontal form-material" method="Post" action="Controlador/updateMedico.php?id=<?php echo $id_medico; ?>">
+              <form class="form-horizontal form-material" method="Post" action="Controlador/updateObra.php?id=<?php echo $id_obra; ?>">
                 <div class="form-group">
-                  <label class="col-sm-12">Tipo de documento</label>
-                  <div class="col-sm-12">
-                      <select disabled class="form-control form-control-line" name="tipoDocumento">
-                        <option value="<?php echo $id_tipo_documento?>"><?php echo $tipo_documento?></option>
-                    </select>
+                  <label class="col-sm-12">Nombre</label>            
+                  <div class="col-md-12">
+                      <input type="text" value="<?php echo $nombreObra?>" class="form-control form-control-line" name="numeroDocumento" required="" onkeypress="return sololetras(event)">
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-12">Numero</label>            
+                  <label class="col-md-12">Autor</label>
                   <div class="col-md-12">
-                      <input type="text" disabled="" value="<?php echo $numeroDocumento?>" class="form-control form-control-line" name="numeroDocumento" required="" onkeypress="return solonumeros(event)">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-md-12">Nombre Completo</label>
-                  <div class="col-md-12">
-                      <input type="text" value="<?php echo $nombre_completo?>" class="form-control form-control-line" name="nombreCompleto" onkeypress="return sololetras(event)">
+                      <input type="text" value="<?php echo $nombreAutor?>" class="form-control form-control-line" name="nombreCompleto" onkeypress="return sololetras(event)">
                   </div>
                 </div>
                 <div class="form-group">                  
-                  <label class="col-md-12">Apellidos</label>
-                  <div class="col-md-12">
-                      <input type="text" value="<?php echo $apellidos?>" class="form-control form-control-line" name="apellidos" onkeypress="return sololetras(event)">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-12">Estado civil</label>
+                  <label class="col-md-12">Genero</label>
                   <div class="col-sm-12">
                       <select class="form-control form-control-line" name="estadoCivil">
-                          <option value="<?php echo $id_estado?>" selected="true"><?php echo $estado?></option>
-                          <option disabled>Seleccione un estado si va a editar</option>
+                          <option value="<?php echo $id_tipo_obra?>" selected="true"><?php echo $tipoObra?></option>
+                          <option disabled>Seleccione uno si va a editar</option>
                         <?php 
                          //se recorre el resultado de la consutla de estado civil
-                        while ($resultado= mysqli_fetch_assoc($seleccionEstado)){
+                        while ($resultado= mysqli_fetch_assoc($seleccionTipoObra)){
                            //se imprime los resultados
                            ?> 
-                        <option value="<?php echo $resultado['id_estado_civil']?>"><?php echo $resultado['nombre']?></option>  
+                        <option value="<?php echo $resultado['id_tipo_obra']?>"><?php echo $resultado['nombre']?></option>  
                         <?php }?>
                     </select>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-12">Tipo de medico</label>
+                  <label class="col-sm-12">Director</label>
                   <div class="col-sm-12">
-                      <select class="form-control form-control-line" name="tipoMedico">
-                          <option value="<?php echo $tipoMedico?>" selected="true"><?php echo $nombreMedico?></option>
-                          <option disabled>Seleccione una opcion</option>
+                      <select class="form-control form-control-line" name="estadoCivil">
+                          <option value="<?php echo $id_director?>" selected="true"><?php echo $nombreDirector?></option>
+                          <option disabled>Seleccione un director si va a editar</option>
                         <?php 
                          //se recorre el resultado de la consutla de estado civil
-                        while ($resultado= mysqli_fetch_assoc($seleccionTipo)){
+                        while ($resultado= mysqli_fetch_assoc($seleccionDirector)){
                            //se imprime los resultados
                            ?> 
-                        <option value="<?php echo $resultado['id_tipo_medico']?>"><?php echo $resultado['nombre']?></option>  
+                        <option value="<?php echo $resultado['id_director']?>"><?php echo $resultado['nombre']?></option>  
                         <?php }?>
                     </select>
                   </div>
@@ -154,7 +124,7 @@
                     <button class="btn btn-success" name="enviar">Modificar</button>
                   </div>
                   <div class="col-sm-9 col-md-4">
-                    <a href="ver_medico.php" class="btn btn-danger">Cancelar</a>
+                    <a href="ver_obra.php" class="btn btn-danger">Cancelar</a>
                   </div>
                 </div>
               </form>

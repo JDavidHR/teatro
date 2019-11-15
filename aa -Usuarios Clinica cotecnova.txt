@@ -1,9 +1,0 @@
-Cuenta medico
-
-Numero documento: 1
-Contraseña: Cotecnova
-
-Cuenta Paciente
-
-Numero documento: 1
-Contraseña: Cotecnova
