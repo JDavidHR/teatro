@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cl&iacute;nica Cotecnova - ver medicos</title>
+  <title>Teatro Cotecnova</title>
   <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
   <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
 
@@ -83,7 +83,7 @@
                             <td><?php echo $resultado['tipo'] ?></td>                      
                             <td><?php echo $resultado['director'] ?></td>
                             <td>
-                                <a href="editar_medicos.php?id=<?php echo $idObra; ?>" class="btn btn-success col-lg-5" name="enviar">Editar</a>   
+                                <a href="editar_obra.php?id=<?php echo $idObra; ?>" class="btn btn-success col-lg-5" name="enviar">Editar</a>   
                                 <!-- Boton que redirecciona al index -->
                                 <a href="eliminar_medicos.php?id=<?php echo $idObra ?>" class="btn btn-danger col-lg-offset-1 col-lg-6 " name="eliminar">Eliminar</a>
                             </td> 

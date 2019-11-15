@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cl&iacute;nica Cotecnova - Modificar medicos</title>
+  <title>Teatro Cotecnova</title>
   <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
   <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
 
@@ -27,8 +27,8 @@
   <?php
     session_start();
     if(isset($_SESSION['tipousuario'])){
-        if($_SESSION['tipousuario'] == 1){ //Sesion como medico
-            include("header_index.php");
+      if($_SESSION['tipousuario'] == 1){ //Sesion como medico
+          include("header_index.php");
   ?>
   <?php
     $id = $_GET['id'];
@@ -58,23 +58,23 @@
     INNER JOIN tipos_medicos on clinica_cotecnova.medicos.tipos_medicos_id = clinica_cotecnova.tipos_medicos.id_tipo_medico
     WHERE id_medico = ".$id."");  
     while ($resultado= mysqli_fetch_assoc($seleccionInformacion)){
-        $id_medico = $resultado['id_medico'];
-        $id_tipo_documento = $resultado['id_tipo_documento'];
-        $tipo_documento = $resultado['tipo_documento'];
-        $numeroDocumento = $resultado['numero_documento'];
-        $nombre_completo = $resultado['nombre_completo'];
-        $apellidos = $resultado['apellidos'];
-        $id_estado = $resultado['id_estado_civil'];
-        $estado = $resultado['estado'];
-        $tipoMedico = $resultado['tipos_medicos_id'];
-        $nombreMedico = $resultado['nombreMedico'];
-        $contrasena = $resultado['contrasena'];        
+      $id_medico = $resultado['id_medico'];
+      $id_tipo_documento = $resultado['id_tipo_documento'];
+      $tipo_documento = $resultado['tipo_documento'];
+      $numeroDocumento = $resultado['numero_documento'];
+      $nombre_completo = $resultado['nombre_completo'];
+      $apellidos = $resultado['apellidos'];
+      $id_estado = $resultado['id_estado_civil'];
+      $estado = $resultado['estado'];
+      $tipoMedico = $resultado['tipos_medicos_id'];
+      $nombreMedico = $resultado['nombreMedico'];
+      $contrasena = $resultado['contrasena'];        
     } 
     $seleccionEstado = $mysql->efectuarConsulta("select clinica_cotecnova.estados_civiles.id_estado_civil, clinica_cotecnova.estados_civiles.nombre from estados_civiles");
     $seleccionTipo = $mysql->efectuarConsulta("select clinica_cotecnova.tipos_medicos.id_tipo_medico, clinica_cotecnova.tipos_medicos.nombre from tipos_medicos");
     //funcion desconectar
     $mysql->desconectar();    
-    ?>
+  ?>
   </div>  
   <!--service-->
   <section id="service" class="section-padding">
@@ -172,14 +172,14 @@
   ?>
   </div>
   <!--/ footer-->
-   <?php
-        }else{
-            header( "refresh:0;url=index.php" );  
-        }
-    }else{
-        header( "refresh:0;url=login.php" );    
-    }
-    ?>
+<?php
+      }else{
+          header( "refresh:0;url=index.php" );  
+      }
+  }else{
+      header( "refresh:0;url=login_teatro.php" );    
+  }
+?>
   <script src="js/validacionCampos.js"></script>
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery.easing.min.js"></script>
