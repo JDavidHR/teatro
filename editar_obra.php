@@ -74,7 +74,7 @@
           <div class="card">
             <!-- Tab panes -->
             <div class="card-body">
-              <form class="form-horizontal form-material" method="Post" action="Controlador/updateObra.php?id=<?php echo $id_obra; ?>">
+              <form class="form-horizontal form-material" method="Post" action="Controlador/updateObra.php?id=<?php echo $id; ?>">
                 <div class="form-group">
                   <label class="col-sm-12">Nombre</label>            
                   <div class="col-md-12">
@@ -83,8 +83,18 @@
                 </div>
                 <div class="form-group">
                   <label class="col-md-12">Autor</label>
-                  <div class="col-md-12">
-                      <input type="text" value="<?php echo $nombreAutor?>" class="form-control form-control-line" name="nombreAutor" onkeypress="return sololetras(event)">
+                  <div class="col-sm-12">
+                      <select class="form-control form-control-line" name="nombreAutor">
+                          <option value="<?php echo $id_autor?>" selected="true"><?php echo $nombreAutor?></option>
+                          <option disabled>Seleccione un autor si va a editar</option>
+                        <?php 
+                         //se recorre el resultado de la consutla de estado civil
+                        while ($resultado= mysqli_fetch_assoc($seleccionAutor)){
+                           //se imprime los resultados
+                           ?> 
+                        <option value="<?php echo $resultado['id']?>"><?php echo $resultado['nombre']?></option>  
+                        <?php }?>
+                    </select>
                   </div>
                 </div>
                 <div class="form-group">                  
@@ -98,7 +108,7 @@
                         while ($resultado= mysqli_fetch_assoc($seleccionTipoObra)){
                            //se imprime los resultados
                            ?> 
-                        <option value="<?php echo $resultado['id_tipo_obra']?>"><?php echo $resultado['nombre']?></option>  
+                        <option value="<?php echo $resultado['id']?>"><?php echo $resultado['nombre']?></option>  
                         <?php }?>
                     </select>
                   </div>
@@ -114,7 +124,7 @@
                         while ($resultado= mysqli_fetch_assoc($seleccionDirector)){
                            //se imprime los resultados
                            ?> 
-                        <option value="<?php echo $resultado['id_director']?>"><?php echo $resultado['nombre']?></option>  
+                        <option value="<?php echo $resultado['id']?>"><?php echo $resultado['nombre']?></option>  
                         <?php }?>
                     </select>
                   </div>

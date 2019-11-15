@@ -24,11 +24,11 @@ if(isset($_POST['enviar']) && !empty($_GET['id']) && !empty($_POST['nombreObra']
     require_once '../Modelo/MySQL.php';
     
     //declaracion de variables con sus respectivas asignaciones
-    $id = $_GET['id'];
-    $nombreObra = $_POST['nombreObra'];
-    $nombreAutor = $_POST['nombreAutor'];
-    $TipoObra = $_POST['tipoObra'];
-    $nombreDirector = $_POST['nombreDirector'];
+    $idObra = $_GET['id'];
+    $nombreO = $_POST['nombreObra'];
+    $nombreA = $_POST['nombreAutor'];
+    $TipoO = $_POST['tipoObra'];
+    $nombreD = $_POST['nombreDirector'];
     
     //nueva "archivo" MySQL
     $mysql = new MySQL;
@@ -36,7 +36,7 @@ if(isset($_POST['enviar']) && !empty($_GET['id']) && !empty($_POST['nombreObra']
     $mysql->conectar();
     
     //variable que ejecutara la funcion consulta, pero en este caso, no usamos select sino insert para meter los datos a la respectiva table
-    $actualizar = $mysql->efectuarConsulta("Update teatro.obra.nombre = '".$nombreAutor."', teatro.obra.Autor_id = '".$nombreAutor."', teatro.obra.Tipo_obra_id = ".$TipoObra.", teatro.obra.Director_id = '".$nombreDirector."' where teatro.obra.id =".$id.""); 
+    $actualizar = $mysql->efectuarConsulta("update teatro.obra set teatro.obra.nombre = '".$nombreO."', teatro.obra.Autor_id = '".$nombreA."', teatro.obra.Tipo_obra_id = '".$TipoO."', teatro.obra.Director_id = '".$nombreD."' where teatro.obra.id = ".$idObra."");
     //Desconecto la conexion de la bD
     $mysql->desconectar();
     //decision para comprobar si se ejecuto, se redirige al index principal
