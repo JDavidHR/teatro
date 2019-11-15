@@ -17,18 +17,18 @@
     <div class="col-lg-offset-3 col-lg-6">
 <?php
 //condicion para comprobar si los campos están declarados anteriormente y si no estan vacíos
-if(isset($_POST['enviar']) && !empty($_GET['id']) && !empty($_POST['nombreCompleto'])
-        &&!empty($_POST['apellidos']) && !empty($_POST['estadoCivil']) && !empty($_POST['tipoMedico'])){
+if(isset($_POST['enviar']) && !empty($_GET['id']) && !empty($_POST['nombreObra'])
+        &&!empty($_POST['nombreAutor']) && !empty($_POST['tipoObra']) && !empty($_POST['nombreDirector'])){
     
     //lamado al archivo MySQL
     require_once '../Modelo/MySQL.php';
     
     //declaracion de variables con sus respectivas asignaciones
     $id = $_GET['id'];
-    $nombreObra = $_POST[''];
-    $nombreAutor = $_POST[''];
-    $TipoObra = $_POST[''];
-    $nombreDirector = $_POST[''];
+    $nombreObra = $_POST['nombreObra'];
+    $nombreAutor = $_POST['nombreAutor'];
+    $TipoObra = $_POST['tipoObra'];
+    $nombreDirector = $_POST['nombreDirector'];
     
     //nueva "archivo" MySQL
     $mysql = new MySQL;

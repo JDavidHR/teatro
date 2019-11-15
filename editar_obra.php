@@ -90,7 +90,7 @@
                 <div class="form-group">                  
                   <label class="col-md-12">Genero</label>
                   <div class="col-sm-12">
-                      <select class="form-control form-control-line" name="estadoCivil">
+                      <select class="form-control form-control-line" name="tipoObra">
                           <option value="<?php echo $id_tipo_obra?>" selected="true"><?php echo $tipoObra?></option>
                           <option disabled>Seleccione uno si va a editar</option>
                         <?php 
@@ -106,7 +106,7 @@
                 <div class="form-group">
                   <label class="col-sm-12">Director</label>
                   <div class="col-sm-12">
-                      <select class="form-control form-control-line" name="estadoCivil">
+                      <select class="form-control form-control-line" name="nombreDirector">
                           <option value="<?php echo $id_director?>" selected="true"><?php echo $nombreDirector?></option>
                           <option disabled>Seleccione un director si va a editar</option>
                         <?php 
