@@ -59,7 +59,7 @@
             <!-- Tab panes -->
             <div class="card-body">
                 <form class="form-horizontal form-material">
-                <table class="table table-hover" id="ver_medico">
+                <table class="table table-hover" id="ver_obra">
                     <thead>
                         <tr>
                             <th scope="col">Nombre de la obra</th>
@@ -83,9 +83,7 @@
                             <td><?php echo $resultado['tipo'] ?></td>                      
                             <td><?php echo $resultado['director'] ?></td>
                             <td>
-                                <a href="editar_medicos.php?id=<?php echo $idObra; ?>" class="btn btn-success col-lg-5" name="enviar">Editar</a>   
-                                <!-- Boton que redirecciona al index -->
-                                <a href="eliminar_medicos.php?id=<?php echo $idObra ?>" class="btn btn-danger col-lg-offset-1 col-lg-6 " name="eliminar">Eliminar</a>
+                                <a href="Controlador\activarObra.php?id=<?php echo $idObra; ?>" class="btn btn-success col-lg-6" name="enviar">Activar</a>   
                             </td> 
                         </tr>
                         <?php
@@ -120,7 +118,7 @@
     <script src="js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready( function () {
-        $('#ver_medico').DataTable();
+        $('#ver_obra').DataTable();
     } );
     </script>
     <script src="js/bootstrap.min.js"></script>

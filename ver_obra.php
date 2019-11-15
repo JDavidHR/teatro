@@ -85,7 +85,7 @@
                             <td>
                                 <a href="editar_obra.php?id=<?php echo $idObra; ?>" class="btn btn-success col-lg-5" name="enviar">Editar</a>   
                                 <!-- Boton que redirecciona al index -->
-                                <a href="eliminar_medicos.php?id=<?php echo $idObra ?>" class="btn btn-danger col-lg-offset-1 col-lg-6 " name="eliminar">Eliminar</a>
+                                <a href="eliminar_obra.php?id=<?php echo $idObra ?>" class="btn btn-danger col-lg-offset-1 col-lg-6 " name="eliminar">Eliminar</a>
                             </td> 
                         </tr>
                         <?php
