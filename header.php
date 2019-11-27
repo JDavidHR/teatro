@@ -83,7 +83,7 @@
                       </div>
                       <div class="banner-text text-center">
                         <h1 class="white" style="background-color: black;color: white;opacity: 0.70;border-radius: 10px">Bienvenido administrador</h1>
-                        <a href="crear_cita.php" class="btn btn-appoint">Ingresar nueva obra</a>
+                        <a href="crear_obra.php" class="btn btn-appoint">Ingresar nueva obra</a>
                       </div>
                     </div>
                   </div>
