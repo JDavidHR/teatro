@@ -50,6 +50,7 @@
                                   <a class="dropdown-item btn" href="crear_obra.php">Ingresar nueva obra</a>
                                   <a class="dropdown-item btn" href="ver_obra.php">Ver obras</a>
                                   <a class="dropdown-item btn" href="ver_obra_inactivo.php">Ver obras inactivas</a>
+                                  <a class="dropdown-item btn" href="asignar_personaje.php">Asignar personajes</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
