@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style_comprar.css">
-    <title>Advanced Search Form</title>
+    <title>Compra de Ticket</title>
 </head>
 
 <body>

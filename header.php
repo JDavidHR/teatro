@@ -59,6 +59,14 @@
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Funciones</a>
+                                <div class="dropdown-menu " aria-labelledby="dropdown1">
+                                  <a class="dropdown-item btn" href="#">Ingresar nueva Funcion</a>
+                                  <a class="dropdown-item btn" href="#">Ver Funciones</a>
+                                  <a class="dropdown-item btn" href="#">Ver Funciones inactivas</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['nombre']?></a>
                                 <div class="dropdown-menu " aria-labelledby="dropdown1">
                                   <a class="dropdown-item btn" href="Controlador\cerrar_sesion.php">Cerrar sesion</a>
@@ -83,7 +91,7 @@
                       </div>
                       <div class="banner-text text-center">
                         <h1 class="white" style="background-color: black;color: white;opacity: 0.70;border-radius: 10px">Bienvenido administrador</h1>
-                        <a href="crear_cita.php" class="btn btn-appoint">Ingresar nueva obra</a>
+                        <a href="crear_obra.php" class="btn btn-appoint">Ingresar nueva obra</a>
                       </div>
                     </div>
                   </div>
