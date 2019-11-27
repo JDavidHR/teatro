@@ -31,6 +31,7 @@
         if($_SESSION['tipousuario'] == 1){ //Sesion como medico
         include("header_index.php");
     ?>
+
     <?php 
         //llamado al archivo MySQL
         require_once 'Modelo/MySQL.php';
@@ -40,11 +41,12 @@
         $mysql->conectar();    
          //respectivas variables donde se llama la función consultar, se incluye la respectiva consulta
 
-        $consulta = $mysql->efectuarConsulta("SELECT teatro.funciones.id as idFuncion, teatro.funciones.fecha_hora, teatro.funciones.Teatro_id, teatro.funciones.Tipo_funcion_id, teatro.funciones.Tipo_cliente_id,teatro.funciones.precio,teatro.tipo_teatro.id,teatro.tipo_teatro.tipo,teatro.tipo_funcion.id,teatro.tipo_funcion.Nombre as tipo_fun, teatro.tipo_cliente.id,teatro.tipo_cliente.Nombre 
+        $consulta = $mysql->efectuarConsulta("SELECT teatro.funciones.id as idFuncion,teatro.funciones.fecha_hora ,DATEDIFF(teatro.funciones.fecha_hora,DATE_FORMAT(NOW(),'%Y-%m-%d')) as diferencia_dias, teatro.funciones.Teatro_id, teatro.funciones.Tipo_funcion_id, teatro.funciones.Tipo_cliente_id,teatro.funciones.precio,teatro.tipo_teatro.id,teatro.tipo_teatro.tipo,teatro.tipo_funcion.id,teatro.tipo_funcion.Nombre as tipo_fun, teatro.tipo_cliente.id,teatro.tipo_cliente.Nombre 
             from teatro.funciones
             join teatro.tipo_teatro on teatro.funciones.Teatro_id = teatro.tipo_teatro.id 
             join teatro.tipo_funcion on teatro.funciones.Tipo_funcion_id = teatro.tipo_funcion.id 
-            join teatro.tipo_cliente on teatro.funciones.Tipo_cliente_id = teatro.tipo_cliente.id");
+            join teatro.tipo_cliente on teatro.funciones.Tipo_cliente_id = teatro.tipo_cliente.id
+            where teatro.funciones.fecha_hora > DATE_FORMAT(NOW(),'%Y-%m-%d')");
         //funcion desconectar
         $mysql->desconectar();    
         ?>
@@ -76,28 +78,49 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <!-- Llamado al ciclo while donde vamos a recorrer un array asociativo con la consulta declarada anteriormente -->
                     <?php 
-                        while ($resultado= mysqli_fetch_assoc($consulta)){  
-                        $idFuncion = $resultado['idFuncion'];                       
+                    //Si la consulta tiene resultados
+                    if(!empty($consulta))
+                    { 
+                        while ($resultado= mysqli_fetch_assoc($consulta))
+                        { 
+                            $idFuncion = $resultado['idFuncion']; 
+                            //Trae el resultado de la consulta 
+                            //SELECT DATEDIFF(clinica_cotecnova.citas.fecha_hora, DATE_FORMAT(NOW(),'%Y-%m-%d')) ...
+                            if($resultado['diferencia_dias'] == 1)
+                            {
                     ?>
-                    
-                        <tr>
-                            <!-- Se traen los datos y se imprimen en las opciones del select -->
-                            <td><?php echo $resultado['fecha_hora'] ?></td>
+                        <!-- Si la fecha de la cita esta a un dia de la fecha actual, muestra esos datos en rojo -->
+                        <tr style="color: red;">
+                            <td scope="row" ><?php echo $resultado['fecha_hora'] ?></td>
                             <td><?php echo $resultado['tipo'] ?></th>
                             <td><?php echo $resultado['tipo_fun'] ?></td>                      
                             <td><?php echo $resultado['Nombre'] ?></td>
                             <td>
-                                <a href="editar_obra.php?id=<?php echo $idObra; ?>" class="btn btn-success " name="enviar">Editar</a>
+                        </tr>
+                    <?php
+                            }else{
+                    ?>
+                        <tr>
+                            <!-- sino los muestra normal -->
+                            <td scope="row" ><?php echo $resultado['fecha_hora'] ?></td>
+                            <td><?php echo $resultado['tipo'] ?></th>
+                            <td><?php echo $resultado['tipo_fun'] ?></td>                      
+                            <td><?php echo $resultado['Nombre'] ?></td>
+                            <td>
+
+                            <td>
+                            <a href="editar_obra.php?id=<?php echo $idFuncion; ?>" class="btn btn-success " name="enviar">Editar</a>
                             </td>
                             <td> 
-                                <a href="eliminar_obra.php?id=<?php echo $idObra ?>" class="btn btn-danger" name="eliminar">Eliminar</a>
+                            <a href="eliminar_obra.php?id=<?php echo $idFuncion ?>" class="btn btn-danger" name="eliminar">Eliminar</a>
                             </td>
                         </tr>
-                        <?php
-                            }
-                        ?>
+                    <?php
+                          }
+                        }
+                    }
+                    ?>
                     </tbody>
                     </table>
                   </form>
