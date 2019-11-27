@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cl&iacute;nica Cotecnova - ver medicos</title>
+  <title>Teatro Cotecnova - Obras inactivas</title>
   <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
   <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
 
@@ -48,13 +48,13 @@
     <section id="service" class="section-padding">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-sm-4">
+            <div class="col-md-3 col-sm-3">
             <h2 class="ser-title">Bienvenido</h2>
             <hr class="botm-line">
-            <p>Bienvenid@ al ver medicos</p>
-            <p>Todos los datos mostrados son los suministrados por el medico ser&aacute;n de uso aplicativo, se guardar&aacute; la privacidad del usuario.</p>
+            <p>Obras actualmente inactivas</p>
+            <p>Todos los datos mostrados son los suministrados por el teatro ser&aacute;n de uso aplicativo.</p>
             </div>
-        <div class="col-md-8 col-sm-8">
+        <div class="col-md-9 col-sm-9">
             <div class="card">
             <!-- Tab panes -->
             <div class="card-body">
@@ -66,7 +66,7 @@
                             <th scope="col">Autor</th>
                             <th scope="col">Genero</th>
                             <th scope="col">Director</th>
-                            <th scope="col">Editar o Eliminar</th>
+                            <th scope="col">Restaurar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -83,7 +83,7 @@
                             <td><?php echo $resultado['tipo'] ?></td>                      
                             <td><?php echo $resultado['director'] ?></td>
                             <td>
-                                <a href="Controlador\activarObra.php?id=<?php echo $idObra; ?>" class="btn btn-success col-lg-6" name="enviar">Activar</a>   
+                                <a href="Controlador\activarObra.php?id=<?php echo $idObra; ?>" class="btn btn-info" name="enviar">Activar</a>   
                             </td> 
                         </tr>
                         <?php
