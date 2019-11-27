@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-11-2019 a las 20:19:23
--- Versión del servidor: 10.4.6-MariaDB
--- Versión de PHP: 7.3.9
+-- Tiempo de generación: 28-11-2019 a las 00:34:06
+-- Versión del servidor: 10.1.38-MariaDB
+-- Versión de PHP: 7.3.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -272,16 +272,17 @@ CREATE TABLE `personajes` (
   `id` int(11) NOT NULL,
   `nombre` varchar(45) COLLATE utf8_spanish_ci NOT NULL,
   `descripcion` varchar(45) COLLATE utf8_spanish_ci NOT NULL,
-  `Actores_id` int(11) NOT NULL
+  `Actores_id` int(11) NOT NULL,
+  `estado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `personajes`
 --
 
-INSERT INTO `personajes` (`id`, `nombre`, `descripcion`, `Actores_id`) VALUES
-(1, 'Romeo', 'Personaje principal', 1),
-(2, 'Julieta', 'Personaje principal', 4);
+INSERT INTO `personajes` (`id`, `nombre`, `descripcion`, `Actores_id`, `estado`) VALUES
+(1, 'Romeo', 'Personaje principal', 1, 1),
+(2, 'Julieta', 'Personaje principal', 4, 0);
 
 -- --------------------------------------------------------
 
@@ -293,17 +294,19 @@ CREATE TABLE `reemplazos` (
   `id` int(11) NOT NULL,
   `nombre` varchar(45) COLLATE utf8_spanish_ci NOT NULL,
   `Actores_id` int(11) NOT NULL,
-  `Funciones_id` int(11) NOT NULL
+  `Funciones_id` int(11) NOT NULL,
+  `estado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `reemplazos`
 --
 
-INSERT INTO `reemplazos` (`id`, `nombre`, `Actores_id`, `Funciones_id`) VALUES
-(1, 'Antonio Gonzales', 2, 2),
-(2, 'Allan Gimenes', 1, 1),
-(3, 'Daniel Arias', 3, 2);
+INSERT INTO `reemplazos` (`id`, `nombre`, `Actores_id`, `Funciones_id`, `estado`) VALUES
+(1, 'Antonio Gonzales', 2, 2, 1),
+(2, 'Allan Gimenes', 1, 1, 1),
+(3, 'Daniel Arias', 3, 2, 1),
+(4, 'david', 2, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -774,7 +777,7 @@ ALTER TABLE `personajes`
 -- AUTO_INCREMENT de la tabla `reemplazos`
 --
 ALTER TABLE `reemplazos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `teatro`
