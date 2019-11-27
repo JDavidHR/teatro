@@ -107,7 +107,7 @@
                             <td><?php echo $resultado['tipo'] ?></th>
                             <td><?php echo $resultado['tipo_fun'] ?></td>                      
                             <td><?php echo $resultado['Nombre'] ?></td>
-                            <td>
+                            
 
                             <td>
                             <a href="editar_obra.php?id=<?php echo $idFuncion; ?>" class="btn btn-success " name="enviar">Editar</a>
