@@ -63,9 +63,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Funciones</a>
                                 <div class="dropdown-menu " aria-labelledby="dropdown1">
-                                  <a class="dropdown-item btn" href="#">Ingresar nueva Funcion</a>
                                   <a class="dropdown-item btn" href="ver_funcion.php">Ver Funciones</a>
-                                  <a class="dropdown-item btn" href="#">Ver Funciones inactivas</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
