@@ -62,7 +62,7 @@
             <!-- Tab panes -->
             <div class="card-body">
               
-              <form class="form-horizontal form-material" action="Controlador/insertarCita.php" method="POST">
+              <form class="form-horizontal form-material" action="Controlador/insertarObra.php" method="POST">
                 
                 <div class="form-group">
                   <label class="col-sm-12">Nombre de la Obra</label>
