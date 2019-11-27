@@ -26,11 +26,13 @@
             
         //Recuperar datos del formulario (crear_cita.php)    
         $fecha = $_POST['fecha'];
-        $fecha = date('Y-m-d H:i:s');
+        $fecha = date('Y-m-d');
+        $hora = $_POST['hora'];
         $tipo_teatro = $_POST['tipo_teatro'];
         $tipo_fun = $_POST['tipo_fun'];
         $tipo_cliente = $_POST['tipo_cliente'];
         
+        $fechaHora = $fecha." ".$hora;
 
         
         //Nuevo archivo MySQL y se llama a la funcion conectar()
@@ -45,7 +47,7 @@
           
 
         //Variable para efectuar la consulta SQL, en este caso, insertar datos en la tabla citas
-        $compra = $mysql->efectuarConsulta("insert into teatro.funciones(fecha_hora,Teatro_id,Tipo_funcion_id,Tipo_cliente_id,precio) VALUES ('".$fecha."','".$tipo_teatro."','".$tipo_fun."','".$tipo_cliente."',10000)"); 
+        $compra = $mysql->efectuarConsulta("insert into teatro.funciones(fecha_hora,Teatro_id,Tipo_funcion_id,Tipo_cliente_id,precio) VALUES ('".$fechaHora."','".$tipo_teatro."','".$tipo_fun."','".$tipo_cliente."',10000)"); 
 
           if($compra){
            //impresion de mensajes personalizados

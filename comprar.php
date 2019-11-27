@@ -33,6 +33,11 @@ $mysql->desconectar();
             </div>
 
             <div class="form-group">
+                <label for="first-name">Hora</label>
+                <input type="Time" class="form-control" placeholder="Hora" id="first-name" name="hora">
+            </div>
+
+            <div class="form-group">
                   <label class="col-md-12">Teatro</label>
                   <div class="col-sm-12">
                       <select class="form-control form-control-line" name="tipo_teatro">
