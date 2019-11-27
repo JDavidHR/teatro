@@ -43,7 +43,7 @@
             from teatro.reemplazos 
             join tipo_funcion on teatro.tipo_funcion.id = teatro.reemplazos.Funciones_id
             join actores on teatro.actores.id = teatro.reemplazos.Actores_id 
-            where estado = 1");
+            where estado = 0");
         //funcion desconectar
         $mysql->desconectar();    
         ?>
