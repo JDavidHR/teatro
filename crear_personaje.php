@@ -38,9 +38,7 @@
     //funcion conectar
     $mysql->conectar();
     //respectivas variables donde se llama la función consultar, se incluye la respectiva consulta
-    $selecciontipoobra = $mysql->efectuarConsulta("SELECT teatro.tipo_obra.id,teatro.tipo_obra.nombre from tipo_obra");     
-    $seleccionAutor = $mysql->efectuarConsulta("SELECT teatro.autor.id,teatro.autor.nombre from autor");
-    $selecciondirector = $mysql->efectuarConsulta("SELECT teatro.director.id,teatro.director.nombre from director");
+    $seleccionActor = $mysql->efectuarConsulta("SELECT teatro.actores.id,teatro.actores.nombre from actores");
 
     //funcion desconectar
     $mysql->desconectar();    
@@ -62,63 +60,31 @@
             <!-- Tab panes -->
             <div class="card-body">
               
-              <form class="form-horizontal form-material" action="Controlador/insertarObra.php" method="POST">
+              <form class="form-horizontal form-material" action="Controlador/insertarPersonaje.php" method="POST">
                 
                 <div class="form-group">
-                  <label class="col-sm-12">Nombre de la Obra</label>
+                  <label class="col-sm-12">Nombre del personaje</label>
                   <div class="col-sm-12">
-                      <input type="text" name="nombre_obra" placeholder="Nombre de la Obra" class="form-control form-control-line">
+                      <input type="text" name="nombre_personaje" placeholder="Nombre del personaje" class="form-control form-control-line">
                   </div>
                 </div> 
 
                 <div class="form-group">
-                    <label class="col-sm-12">Autor</label>
-                    <div class="col-sm-12">
-                        <select class="form-control form-control-line" name="autor">
-                          <!-- Llamado al ciclo while donde vamos a recorrer un array asociativo con la consulta declarada anteriormente -->
-                          <option value="0">Nombre del Autor</option>   
-                        <?php 
-                        //cliclo while que nos servira para traer los datos que haya seleccionado en la cedula
-                            while ($resultado = mysqli_fetch_assoc($seleccionAutor)){   
-                        ?> 
-                          <!-- Se traen los datos y se imprimen en las opciones del select -->
-                        
-                          <!-- impresion de los datos traidos en el select con sus respectivas variables -->
-                        <option value="<?php echo $resultado['id']?>"><?php echo $resultado['nombre'];?></option>  
-                        <?php }?>
-                    </select>
+                  <label class="col-sm-12">Descripcion (Personaje principal, secundario, etc..)</label>
+                  <div class="col-sm-12">
+                      <input type="text" name="descripcion" placeholder="Ingrese una descripcion" class="form-control form-control-line">
                   </div>
-                </div>
+                </div> 
 
                 <div class="form-group">
-                    <label class="col-sm-12">Tipo Obra</label>
+                    <label class="col-sm-12">Actor</label>
                     <div class="col-sm-12">
-                        <select class="form-control form-control-line" name="obra">
+                        <select class="form-control form-control-line" name="actor">
                           <!-- Llamado al ciclo while donde vamos a recorrer un array asociativo con la consulta declarada anteriormente -->
-                          <option value="0">Tipo de Obra</option>   
+                          <option value="0">Elija un actor</option>   
                         <?php 
                         //cliclo while que nos servira para traer los datos que haya seleccionado en la cedula
-                            while ($resultado = mysqli_fetch_assoc($selecciontipoobra)){   
-                        ?> 
-                          <!-- Se traen los datos y se imprimen en las opciones del select -->
-                        
-                          <!-- impresion de los datos traidos en el select con sus respectivas variables -->
-                        <option value="<?php echo $resultado['id']?>"><?php echo $resultado['nombre'];?></option> 
-                        <?php }?>
-                    </select>
-                  </div>
-                </div>
-
-
-                <div class="form-group">
-                    <label class="col-sm-12">Director</label>
-                    <div class="col-sm-12">
-                        <select class="form-control form-control-line" name="director">
-                          <!-- Llamado al ciclo while donde vamos a recorrer un array asociativo con la consulta declarada anteriormente -->
-                          <option value="0">Nombre Director</option>   
-                        <?php 
-                        //cliclo while que nos servira para traer los datos que haya seleccionado en la cedula
-                            while ($resultado = mysqli_fetch_assoc($selecciondirector)){   
+                            while ($resultado = mysqli_fetch_assoc($seleccionActor)){   
                         ?> 
                           <!-- Se traen los datos y se imprimen en las opciones del select -->
                         
@@ -134,7 +100,7 @@
                 <div class="form-group">
                   <div class="col-sm-3 col-md-2">
                     <!-- creacion de boton registrar --> 
-                    <button class="btn btn-success" name="enviar">Añadir Obra</button>
+                    <button class="btn btn-success" name="enviar">Crear</button>
                   </div>
                   <div class="col-sm-9 col-md-4">
                     <!-- creacion de boton cancelar que redirige al index del medico -->
