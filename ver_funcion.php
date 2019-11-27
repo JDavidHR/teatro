@@ -73,7 +73,6 @@
                             <th scope="col">Teatro</th>
                             <th scope="col">Tipo Funcion</th>
                             <th scope="col">Tipo Cliente</th>
-                            <th scope="col">Editar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -106,11 +105,6 @@
                             <td><?php echo $resultado['tipo'] ?></th>
                             <td><?php echo $resultado['tipo_fun'] ?></td>                      
                             <td><?php echo $resultado['Nombre'] ?></td>
-                            
-
-                            <td>
-                            <a href="editar_obra.php?id=<?php echo $idFuncion; ?>" class="btn btn-success " name="enviar">Editar</a>
-                            </td>
                         </tr>
                     <?php
                           }
