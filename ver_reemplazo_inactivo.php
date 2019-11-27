@@ -85,7 +85,7 @@
                             <td><?php echo $resultado['nombre_actor'] ?></th>
                             <td><?php echo $resultado['tipo_fun'] ?></td>
                             <td> 
-                                <a href="eliminar_Reemplazo.php?id=<?php echo $idReemplazo ?>" class="btn btn-danger" name="eliminar">Eliminar</a>
+                                <a href="Controlador\activarReemplazo.php?id=<?php echo $idReemplazo; ?>" class="btn btn-info" name="enviar">Activar</a>
                             </td>
                         </tr>
                         <?php

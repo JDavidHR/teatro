@@ -69,6 +69,7 @@
                             <th scope="col">Nombre del Reemplazo</th>
                             <th scope="col">Actor</th>
                             <th scope="col">Funcion</th>
+                            <th scope="col">Editar</th>
                             <th scope="col">Eliminar</th>
                         </tr>
                     </thead>
@@ -84,6 +85,9 @@
                             <td><?php echo $resultado['nombre'] ?></td>
                             <td><?php echo $resultado['nombre_actor'] ?></th>
                             <td><?php echo $resultado['tipo_fun'] ?></td>
+                            <td>
+                                <a href="editar_personaje.php?id=<?php echo $idReemplazo; ?>" class="btn btn-success " name="enviar">Editar</a>
+                            </td>
                             <td> 
                                 <a href="eliminar_Reemplazo.php?id=<?php echo $idReemplazo ?>" class="btn btn-danger" name="eliminar">Eliminar</a>
                             </td>
