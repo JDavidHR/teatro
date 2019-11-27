@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-11-2019 a las 02:47:15
--- Versión del servidor: 10.4.8-MariaDB
--- Versión de PHP: 7.1.33
+-- Tiempo de generación: 27-11-2019 a las 20:19:23
+-- Versión del servidor: 10.4.6-MariaDB
+-- Versión de PHP: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -144,20 +144,19 @@ INSERT INTO `director` (`id`, `cedula`, `nombre`, `Universidad_id`) VALUES
 CREATE TABLE `funciones` (
   `id` int(11) NOT NULL,
   `fecha_hora` datetime NOT NULL,
-  `precio` float NOT NULL COMMENT 'Precio del ticket',
   `Teatro_id` int(11) NOT NULL,
   `Tipo_funcion_id` int(11) NOT NULL,
   `Tipo_cliente_id` int(11) NOT NULL,
-  `Obra_Id` int(11) NOT NULL
+  `precio` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `funciones`
 --
 
-INSERT INTO `funciones` (`id`, `fecha_hora`, `precio`, `Teatro_id`, `Tipo_funcion_id`, `Tipo_cliente_id`, `Obra_Id`) VALUES
-(1, '2019-09-26 09:27:00', 10000, 1, 1, 2, 1),
-(2, '2019-03-08 17:00:00', 15000, 2, 2, 2, 2);
+INSERT INTO `funciones` (`id`, `fecha_hora`, `Teatro_id`, `Tipo_funcion_id`, `Tipo_cliente_id`, `precio`) VALUES
+(1, '2019-09-26 09:27:00', 1, 1, 2, 10000),
+(2, '2019-03-08 17:00:00', 2, 2, 2, 15000);
 
 -- --------------------------------------------------------
 
@@ -564,12 +563,11 @@ ALTER TABLE `director`
 -- Indices de la tabla `funciones`
 --
 ALTER TABLE `funciones`
-  ADD PRIMARY KEY (`id`,`Teatro_id`,`Tipo_funcion_id`,`Tipo_cliente_id`,`Obra_Id`) USING BTREE,
+  ADD PRIMARY KEY (`id`,`Teatro_id`,`Tipo_funcion_id`,`Tipo_cliente_id`),
   ADD UNIQUE KEY `id_UNIQUE` (`id`),
   ADD KEY `fk_Funciones_Teatro1_idx` (`Teatro_id`),
   ADD KEY `fk_Funciones_Tipo_funcion1_idx` (`Tipo_funcion_id`),
-  ADD KEY `fk_Funciones_Tipo_cliente1_idx` (`Tipo_cliente_id`),
-  ADD KEY `fk_Funciones_Obra_idx` (`Obra_Id`) USING BTREE;
+  ADD KEY `fk_Funciones_Tipo_cliente1_idx` (`Tipo_cliente_id`);
 
 --
 -- Indices de la tabla `genero`
@@ -770,7 +768,7 @@ ALTER TABLE `obra`
 -- AUTO_INCREMENT de la tabla `personajes`
 --
 ALTER TABLE `personajes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `reemplazos`
@@ -861,8 +859,7 @@ ALTER TABLE `director`
 ALTER TABLE `funciones`
   ADD CONSTRAINT `fk_Funciones_Teatro1` FOREIGN KEY (`Teatro_id`) REFERENCES `teatro` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_Funciones_Tipo_cliente1` FOREIGN KEY (`Tipo_cliente_id`) REFERENCES `tipo_cliente` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_Funciones_Tipo_funcion1` FOREIGN KEY (`Tipo_funcion_id`) REFERENCES `tipo_funcion` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `funciones_ibfk_1` FOREIGN KEY (`Obra_Id`) REFERENCES `obra` (`id`);
+  ADD CONSTRAINT `fk_Funciones_Tipo_funcion1` FOREIGN KEY (`Tipo_funcion_id`) REFERENCES `tipo_funcion` (`id`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `instituciones`

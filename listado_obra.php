@@ -66,6 +66,12 @@
             <!-- Tab panes -->
             <div class="card-body">
                 <form class="form-horizontal form-material">
+                  <div class="form-group">
+                  <label class="col-sm-12">Nombre</label>            
+                  <div class="col-md-12">
+                      <input type="text" value="<?php echo $nombreObra2?>" class="form-control form-control-line" name="nombreObra" disabled>
+                  </div>
+                </div>
                 <table class="table table-hover" id="ver_obras">
                     <thead>
                         <tr>
@@ -91,10 +97,10 @@
                           <td><?php echo $resultado['actor'] ?></td>                      
                           <td><?php echo $resultado['papel'] ?></td>
                           <td>
-                              <a href="editar_obra.php?id=<?php echo $id_personaje; ?>" class="btn btn-success " name="enviar">Editar</a>
+                              <a href="editar_personaje.php?id=<?php echo $id_personaje; ?>" class="btn btn-success " name="enviar">Editar</a>
                           </td>
                           <td> 
-                              <a href="eliminar_obra.php?id=<?php echo $id_personaje; ?>" class="btn btn-danger" name="eliminar">Eliminar</a>
+                              <a href="eliminar_personaje.php?id=<?php echo $id_personaje; ?>" class="btn btn-danger" name="eliminar">Eliminar</a>
                           </td>
                         </tr>
                         <?php
