@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cl&iacute;nica Cotecnova - Crear citas</title>
+  <title>Teatro Cotecnova - Nueva Obra</title>
   <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
   <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
   <!-- Llamado de css -->
@@ -38,8 +38,9 @@
     //funcion conectar
     $mysql->conectar();
     //respectivas variables donde se llama la función consultar, se incluye la respectiva consulta
-    $seleccionCedulaP = $mysql->efectuarConsulta("select clinica_cotecnova.usuarios.numero_documento, clinica_cotecnova.usuarios.nombre_completo, clinica_cotecnova.usuarios.apellidos from usuarios");     
-    $seleccionCedulaM = $mysql->efectuarConsulta("select clinica_cotecnova.medicos.numero_documento, clinica_cotecnova.medicos.nombre_completo, clinica_cotecnova.medicos.apellidos from medicos");
+    $selecciontipoobra = $mysql->efectuarConsulta("SELECT teatro.tipo_obra.id,teatro.tipo_obra.nombre from tipo_obra");     
+    $seleccionAutor = $mysql->efectuarConsulta("SELECT teatro.autor.id,teatro.autor.nombre from autor");
+    $selecciondirector = $mysql->efectuarConsulta("SELECT teatro.director.id,teatro.director.nombre from director");
 
     //funcion desconectar
     $mysql->desconectar();    
@@ -53,7 +54,7 @@
         <div class="col-md-4 col-sm-4">
           <h2 class="ser-title">Bienvenido</h2>
           <hr class="botm-line">
-          <p>Bienvenid@ al formulario de registro, por favor rellenar los siguientes campos con informaci&oacute;n valida y real.</p>
+          <p>Bienvenid@ al formulario de registro, por favor rellenar los siguientes campos.</p>
           <p>Todos los datos pedidos ser&aacute;n de uso aplicativo, se guardar&aacute; la privacidad del usuario.</p>
         </div>
         <div class="col-md-8 col-sm-8">
@@ -64,70 +65,76 @@
               <form class="form-horizontal form-material" action="Controlador/insertarCita.php" method="POST">
                 
                 <div class="form-group">
-                  <label class="col-sm-12">Cedula Paciente</label>
+                  <label class="col-sm-12">Nombre de la Obra</label>
                   <div class="col-sm-12">
-                      <select class="form-control form-control-line" name="documentoPaciente">
-                          <!-- Llamado al ciclo while donde vamos a recorrer un array asociativo con la consulta declarada anteriormente -->
-                          <option value="Ingresar documento">Ingresar documento</option>
-                         <?php 
-                         //cliclo while que nos servira para traer los datos que haya seleccionado en la cedula
-                       while ($resultado = mysqli_fetch_assoc($seleccionCedulaP)){   
-                           ?> 
-                          <!-- Se traen los datos y se imprimen en las opciones del select -->
-                        
-                          <!-- impresion de los datos traidos en el select con sus respectivas variables -->
-                          <option value="<?php echo $resultado['numero_documento']?>"><?php echo $resultado['numero_documento']." - ".$resultado['nombre_completo']." ".$resultado['apellidos'];?></option>  
-                        <?php }?>
-                    </select>
+                      <input type="text" name="nombre_obra" placeholder="Nombre de la Obra" class="form-control form-control-line">
                   </div>
                 </div> 
 
                 <div class="form-group">
-                    <label class="col-sm-12">Cedula Medico</label>
+                    <label class="col-sm-12">Autor</label>
                     <div class="col-sm-12">
-                        <select class="form-control form-control-line" name="documentoMedico">
+                        <select class="form-control form-control-line" name="autor">
                           <!-- Llamado al ciclo while donde vamos a recorrer un array asociativo con la consulta declarada anteriormente -->
-                          <option value="Ingresar documento">Ingresar documento</option>   
+                          <option value="0">Nombre del Autor</option>   
                         <?php 
                         //cliclo while que nos servira para traer los datos que haya seleccionado en la cedula
-                            while ($resultado = mysqli_fetch_assoc($seleccionCedulaM)){   
+                            while ($resultado = mysqli_fetch_assoc($seleccionAutor)){   
                         ?> 
                           <!-- Se traen los datos y se imprimen en las opciones del select -->
                         
                           <!-- impresion de los datos traidos en el select con sus respectivas variables -->
-                        <option value="<?php echo $resultado['numero_documento']?>"><?php echo $resultado['numero_documento']." - ".$resultado['nombre_completo']." ".$resultado['apellidos'];?></option>  
+                        <option value="<?php echo $resultado['id']?>"><?php echo $resultado['nombre'];?></option>  
                         <?php }?>
                     </select>
                   </div>
                 </div>
 
-                <!-- creacion de divs, labels e inputs -->
                 <div class="form-group">
-                  <label class="col-md-12">Fecha</label>
-                  <div class="col-md-4">
-                    <!-- input que sirve para mostrar un calendario, como condicion minima para seleccionar primero se captura el dia actual y no permite que seleccione dias anteriores -->
-                    <input type="date" name="fechaCita" class="form-control form-control-line" required min=<?php $hoy=date("Y-m-d"); echo $hoy;?> >
+                    <label class="col-sm-12">Tipo Obra</label>
+                    <div class="col-sm-12">
+                        <select class="form-control form-control-line" name="obra">
+                          <!-- Llamado al ciclo while donde vamos a recorrer un array asociativo con la consulta declarada anteriormente -->
+                          <option value="0">Tipo de Obra</option>   
+                        <?php 
+                        //cliclo while que nos servira para traer los datos que haya seleccionado en la cedula
+                            while ($resultado = mysqli_fetch_assoc($selecciontipoobra)){   
+                        ?> 
+                          <!-- Se traen los datos y se imprimen en las opciones del select -->
+                        
+                          <!-- impresion de los datos traidos en el select con sus respectivas variables -->
+                        <option value="<?php echo $resultado['id']?>"><?php echo $resultado['nombre'];?></option> 
+                        <?php }?>
+                    </select>
                   </div>
                 </div>
 
-                <div class="form-group">                  
-                  <label class="col-md-12">Hora</label>
-                  <div class="col-md-4">
-                    <input type="time" name="horaCita" class="form-control form-control-line">
+
+                <div class="form-group">
+                    <label class="col-sm-12">Director</label>
+                    <div class="col-sm-12">
+                        <select class="form-control form-control-line" name="director">
+                          <!-- Llamado al ciclo while donde vamos a recorrer un array asociativo con la consulta declarada anteriormente -->
+                          <option value="0">Nombre Director</option>   
+                        <?php 
+                        //cliclo while que nos servira para traer los datos que haya seleccionado en la cedula
+                            while ($resultado = mysqli_fetch_assoc($selecciondirector)){   
+                        ?> 
+                          <!-- Se traen los datos y se imprimen en las opciones del select -->
+                        
+                          <!-- impresion de los datos traidos en el select con sus respectivas variables -->
+                        <option value="<?php echo $resultado['id']?>"><?php echo $resultado['nombre'];?></option> 
+                        <?php }?>
+                    </select>
                   </div>
                 </div>
 
-                <div class="form-group">
-                  <label class="col-sm-12">Motivo de consulta</label>     
-                  <div class="col-md-12">
-                    <input type="text" name="motivoCita" class="form-control form-control-line">
-                  </div>
-                </div>
+               
 
                 <div class="form-group">
                   <div class="col-sm-3 col-md-2">
                     <!-- creacion de boton registrar --> 
-                    <button class="btn btn-success" name="enviar">Crear cita</button>
+                    <button class="btn btn-success" name="enviar">Añadir Obra</button>
                   </div>
                   <div class="col-sm-9 col-md-4">
                     <!-- creacion de boton cancelar que redirige al index del medico -->

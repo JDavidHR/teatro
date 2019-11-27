@@ -46,9 +46,9 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Obras</a>
                                 <div class="dropdown-menu " aria-labelledby="dropdown1">
-                                  <a class="dropdown-item btn" href="crear_medicos.php">Ingresar nueva obra</a>
+                                  <a class="dropdown-item btn" href="crear_obra.php">Ingresar nueva obra</a>
                                   <a class="dropdown-item btn" href="ver_obra.php">Ver obras</a>
-                                  <a class="dropdown-item btn" href="ver_medico_inactivo.php">Ver obras inactivas</a>
+                                  <a class="dropdown-item btn" href="ver_obra_inactivo.php">Ver obras inactivas</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">

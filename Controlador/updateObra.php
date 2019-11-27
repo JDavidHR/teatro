@@ -17,18 +17,18 @@
     <div class="col-lg-offset-3 col-lg-6">
 <?php
 //condicion para comprobar si los campos están declarados anteriormente y si no estan vacíos
-if(isset($_POST['enviar']) && !empty($_GET['id']) && !empty($_POST['nombreCompleto'])
-        &&!empty($_POST['apellidos']) && !empty($_POST['estadoCivil']) && !empty($_POST['tipoMedico'])){
+if(isset($_POST['enviar']) && !empty($_GET['id']) && !empty($_POST['nombreObra'])
+        &&!empty($_POST['nombreAutor']) && !empty($_POST['tipoObra']) && !empty($_POST['nombreDirector'])){
     
     //lamado al archivo MySQL
     require_once '../Modelo/MySQL.php';
     
     //declaracion de variables con sus respectivas asignaciones
-    $idMedico = $_GET['id'];
-    $nombreCompleto = $_POST['nombreCompleto'];
-    $apellidos = $_POST['apellidos'];
-    $estadoCivil = $_POST['estadoCivil'];
-    $tipoMedico = $_POST['tipoMedico'];
+    $idObra = $_GET['id'];
+    $nombreO = $_POST['nombreObra'];
+    $nombreA = $_POST['nombreAutor'];
+    $TipoO = $_POST['tipoObra'];
+    $nombreD = $_POST['nombreDirector'];
     
     //nueva "archivo" MySQL
     $mysql = new MySQL;
@@ -36,19 +36,19 @@ if(isset($_POST['enviar']) && !empty($_GET['id']) && !empty($_POST['nombreComple
     $mysql->conectar();
     
     //variable que ejecutara la funcion consulta, pero en este caso, no usamos select sino insert para meter los datos a la respectiva table
-    $actualizar = $mysql->efectuarConsulta("Update clinica_cotecnova.medicos set nombre_completo = '".$nombreCompleto."', apellidos = '".$apellidos."', estado_civil_id = ".$estadoCivil.", tipos_medicos_id = '".$tipoMedico."' where id_medico =".$idMedico.""); 
+    $actualizar = $mysql->efectuarConsulta("update teatro.obra set teatro.obra.nombre = '".$nombreO."', teatro.obra.Autor_id = '".$nombreA."', teatro.obra.Tipo_obra_id = '".$TipoO."', teatro.obra.Director_id = '".$nombreD."' where teatro.obra.id = ".$idObra."");
     //Desconecto la conexion de la bD
     $mysql->desconectar();
     //decision para comprobar si se ejecuto, se redirige al index principal
     if($actualizar){
       //impresion de mensaje personalizado
        echo "<div class=\"alert alert-success alert-dismissible\"><a href=\"../ver_medico.php\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Felicidades!</strong>El medico ha sido actualizado correctamente.</div>";
-       header( "refresh:3;url=../ver_medico.php" ); 
+       header( "refresh:3;url=../ver_obra.php" ); 
     } else {
         //mensaje de error personalizado
         echo "<div class=\"alert alert-warning alert-dismissible\"><a href=\"../ver_medico.php\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Alerta!</strong>No se ha podido actualizar al medico.</div>";
         //redireccion
-        header( "refresh:3;url=../ver_medico.php" );         
+        header( "refresh:3;url=../ver_obra.php" );         
     }
 }else{
   //impresion de mensaje personalizado
