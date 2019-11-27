@@ -74,7 +74,6 @@
                             <th scope="col">Tipo Funcion</th>
                             <th scope="col">Tipo Cliente</th>
                             <th scope="col">Editar</th>
-                            <th scope="col">Eliminar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -111,9 +110,6 @@
 
                             <td>
                             <a href="editar_obra.php?id=<?php echo $idFuncion; ?>" class="btn btn-success " name="enviar">Editar</a>
-                            </td>
-                            <td> 
-                            <a href="eliminar_obra.php?id=<?php echo $idFuncion ?>" class="btn btn-danger" name="eliminar">Eliminar</a>
                             </td>
                         </tr>
                     <?php
