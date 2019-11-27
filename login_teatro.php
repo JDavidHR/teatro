@@ -61,10 +61,10 @@
           </form>   
         </div>
         <div class="col-md-8 banner-sec">     
-          <img class="d-block img-fluid" src="img/teatro_login.jpg" alt="First slide">
+          <img class="d-block img-fluid" src="img/b.jpg" alt="First slide">
           <div class="banner-text">
-              <h2 style="color: white;">Proximo Evento!</h2>
-              <p style="color: white;">Rapunzel y el colorin colorado de nuevo en acción</p>
+              <h2 style="color: white;">¡Bienvenido!</h2>
+              <p style="color: white;">Bienvenido al login, por favor ingrese los datos correspondientes</p>
           </div>  
         </div>
       </div>

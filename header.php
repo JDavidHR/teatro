@@ -82,8 +82,7 @@
                         <img src="img/logo.png" class="img-responsive">
                       </div>
                       <div class="banner-text text-center">
-                        <h1 class="white" style="background-color: black;color: white;opacity: 0.70;border-radius: 10px">¿Ya sabes que función ver?</h1>
-                        <p style="background-color: black;color: white;opacity: 0.70;border-radius: 10px">Bienvenido al Teatro de Cotecnova online, aqu&iacute; te atenderemos lo m&aacute;s r&aacute;pido posible para cumplir con tus necesidades.</p>
+                        <h1 class="white" style="background-color: black;color: white;opacity: 0.70;border-radius: 10px">Bienvenido administrador</h1>
                         <a href="crear_cita.php" class="btn btn-appoint">Ingresar nueva obra</a>
                       </div>
                     </div>

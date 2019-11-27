@@ -47,7 +47,7 @@
             <div class="info-sec">
               <ul class="quick-info">
                 <li><a href="index.php"><i class="fa fa-circle"></i>Inicio</a></li>
-                <li><a href="servicios.php"><i class="fa fa-circle"></i>Servicios</a></li>
+                <!-- <li><a href="servicios.php"><i class="fa fa-circle"></i>Servicios</a></li> !-->
               </ul>
             </div>
           </div>

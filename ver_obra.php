@@ -66,7 +66,8 @@
                             <th scope="col">Autor</th>
                             <th scope="col">Genero</th>
                             <th scope="col">Director</th>
-                            <th scope="col">Editar o Eliminar</th>
+                            <th scope="col">Editar</th>
+                            <th scope="col">Eliminar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -83,10 +84,11 @@
                             <td><?php echo $resultado['tipo'] ?></td>                      
                             <td><?php echo $resultado['director'] ?></td>
                             <td>
-                                <a href="editar_medicos.php?id=<?php echo $idObra; ?>" class="btn btn-success col-lg-5" name="enviar">Editar</a>   
-                                <!-- Boton que redirecciona al index -->
-                                <a href="eliminar_medicos.php?id=<?php echo $idObra ?>" class="btn btn-danger col-lg-offset-1 col-lg-6 " name="eliminar">Eliminar</a>
-                            </td> 
+                                <a href="editar_medicos.php?id=<?php echo $idObra; ?>" class="btn btn-success " name="enviar">Editar</a>
+                            </td>
+                            <td> 
+                                <a href="eliminar_medicos.php?id=<?php echo $idObra ?>" class="btn btn-danger" name="eliminar">Eliminar</a>
+                            </td>
                         </tr>
                         <?php
                             }
