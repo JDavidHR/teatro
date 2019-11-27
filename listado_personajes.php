@@ -67,6 +67,12 @@
             <!-- Tab panes -->
             <div class="card-body">
                 <form class="form-horizontal form-material">
+                    <div class="form-group">
+                        <label class="col-sm-12">Nombre de la obra</label>            
+                        <div class="col-md-12">
+                            <input type="text" value="<?php echo $nombreObra2?>" class="form-control form-control-line" name="nombreObra" disabled>
+                        </div>
+                    </div>
                 <table class="table table-hover" id="ver_obra">
                     <thead>
                         <tr>
