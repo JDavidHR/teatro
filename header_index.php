@@ -52,9 +52,11 @@
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Backup</a>
+                                <a class="nav-link dropdown-toggle" href="" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Personajes</a>
                                 <div class="dropdown-menu " aria-labelledby="dropdown1">
-                                  <a class="dropdown-item btn" href="Controlador\backup.php">Crear backup</a>
+                                  <a class="dropdown-item btn" href="crear_personaje.php">Ingresar un personaje</a>
+                                  <a class="dropdown-item btn" href="ver_personaje.php">Ver personajes</a>
+                                  <a class="dropdown-item btn" href="ver_personaje_inactivo.php">Ver personajes inactivos</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
@@ -63,6 +65,12 @@
                                   <a class="dropdown-item btn" href="#">Ingresar nueva Funcion</a>
                                   <a class="dropdown-item btn" href="ver_funcion.php">Ver Funciones</a>
                                   <a class="dropdown-item btn" href="#">Ver Funciones inactivas</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Backup</a>
+                                <div class="dropdown-menu " aria-labelledby="dropdown1">
+                                  <a class="dropdown-item btn" href="Controlador\backup.php">Crear backup</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
