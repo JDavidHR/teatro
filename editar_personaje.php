@@ -39,23 +39,17 @@
     //funcion conectar
     $mysql->conectar();
     //consulta de toda la informacion
-    $seleccionInformacion = $mysql->efectuarConsulta("SELECT 
-    teatro.obra.id, teatro.obra.nombre as nombre, teatro.autor.nombre as autor, teatro.autor.id as id_autor, teatro.director.id as id_director, teatro.tipo_obra.id as id_tipo_obra, 
-    teatro.tipo_obra.nombre as tipo, teatro.director.nombre as director FROM obra 
-     JOIN autor on teatro.obra.Autor_id = teatro.autor.id JOIN tipo_obra on teatro.obra.Tipo_obra_id = teatro.tipo_obra.id JOIN director on teatro.obra.Director_id = teatro.director.id
-    WHERE teatro.obra.id = ".$id."");  
+    $seleccionInformacion = $mysql->efectuarConsulta("SELECT teatro.personajes.id as id_personaje, teatro.personajes.nombre as nombre, teatro.personajes.descripcion as descripcion, teatro.actores.id as id_actor, teatro.actores.nombre as actor from teatro.personajes join actores on teatro.actores.id = teatro.personajes.Actores_id WHERE teatro.personajes.id = ".$id."");
+
     while ($resultado= mysqli_fetch_assoc($seleccionInformacion)){
-      $nombreObra = $resultado['nombre'];
-      $nombreAutor = $resultado['autor'];
-      $tipoObra = $resultado['tipo'];
-      $nombreDirector = $resultado['director'];
-      $id_director = $resultado['id_director'];
-      $id_autor = $resultado['id_autor'];
-      $id_tipo_obra = $resultado['id_tipo_obra'];
+      $nombrePersonaje = $resultado['nombre'];
+      $descripcion = $resultado['descripcion'];
+      $actor = $resultado['actor'];
+
+      $id_actor = $resultado['id_actor'];
+      $id_personaje = $resultado['id_personaje'];
     } 
-    $seleccionAutor = $mysql->efectuarConsulta("SELECT teatro.autor.id,teatro.autor.nombre from autor");
-    $seleccionTipoObra = $mysql->efectuarConsulta("SELECT teatro.tipo_obra.id,teatro.tipo_obra.nombre from tipo_obra");
-    $seleccionDirector = $mysql->efectuarConsulta("SELECT teatro.director.id,teatro.director.nombre from director");
+     $seleccionActor = $mysql->efectuarConsulta("SELECT teatro.actores.id,teatro.actores.nombre from actores");
     //funcion desconectar
     $mysql->desconectar();    
   ?>
@@ -74,54 +68,28 @@
           <div class="card">
             <!-- Tab panes -->
             <div class="card-body">
-              <form class="form-horizontal form-material" method="Post" action="Controlador/updateObra.php?id=<?php echo $id; ?>">
+              <form class="form-horizontal form-material" method="Post" action="Controlador/updatePersonaje.php?id=<?php echo $id; ?>">
                 <div class="form-group">
-                  <label class="col-sm-12">Nombre</label>            
+                  <label class="col-sm-12">Nombre del personaje</label>            
                   <div class="col-md-12">
-                      <input type="text" value="<?php echo $nombreObra?>" class="form-control form-control-line" name="nombreObra" required="" onkeypress="return sololetras(event)">
+                      <input type="text" value="<?php echo $nombrePersonaje?>" class="form-control form-control-line" name="nombrePersonaje" required="" onkeypress="return sololetras(event)">
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-md-12">Autor</label>
-                  <div class="col-sm-12">
-                      <select class="form-control form-control-line" name="nombreAutor">
-                          <option value="<?php echo $id_autor?>" selected="true"><?php echo $nombreAutor?></option>
-                          <option disabled>Seleccione un autor si va a editar</option>
-                        <?php 
-                         //se recorre el resultado de la consutla de estado civil
-                        while ($resultado= mysqli_fetch_assoc($seleccionAutor)){
-                           //se imprime los resultados
-                           ?> 
-                        <option value="<?php echo $resultado['id']?>"><?php echo $resultado['nombre']?></option>  
-                        <?php }?>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-group">                  
-                  <label class="col-md-12">Genero</label>
-                  <div class="col-sm-12">
-                      <select class="form-control form-control-line" name="tipoObra">
-                          <option value="<?php echo $id_tipo_obra?>" selected="true"><?php echo $tipoObra?></option>
-                          <option disabled>Seleccione uno si va a editar</option>
-                        <?php 
-                         //se recorre el resultado de la consutla de estado civil
-                        while ($resultado= mysqli_fetch_assoc($seleccionTipoObra)){
-                           //se imprime los resultados
-                           ?> 
-                        <option value="<?php echo $resultado['id']?>"><?php echo $resultado['nombre']?></option>  
-                        <?php }?>
-                    </select>
+                  <label class="col-sm-12">Descripcion</label>            
+                  <div class="col-md-12">
+                      <input type="text" value="<?php echo $descripcion?>" class="form-control form-control-line" name="descripcion" required="" onkeypress="return sololetras(event)">
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-12">Director</label>
+                  <label class="col-sm-12">Actor</label>
                   <div class="col-sm-12">
-                      <select class="form-control form-control-line" name="nombreDirector">
-                          <option value="<?php echo $id_director?>" selected="true"><?php echo $nombreDirector?></option>
-                          <option disabled>Seleccione un director si va a editar</option>
+                      <select class="form-control form-control-line" name="nombreActor">
+                          <option value="<?php echo $id_actor?>" selected="true"><?php echo $actor?></option>
+                          <option disabled>Seleccione un actor</option>
                         <?php 
                          //se recorre el resultado de la consutla de estado civil
-                        while ($resultado= mysqli_fetch_assoc($seleccionDirector)){
+                        while ($resultado= mysqli_fetch_assoc($seleccionActor)){
                            //se imprime los resultados
                            ?> 
                         <option value="<?php echo $resultado['id']?>"><?php echo $resultado['nombre']?></option>  
@@ -134,7 +102,7 @@
                     <button class="btn btn-success" name="enviar">Modificar</button>
                   </div>
                   <div class="col-sm-9 col-md-4">
-                    <a href="ver_obra.php" class="btn btn-danger">Cancelar</a>
+                    <a href="ver_personaje.php" class="btn btn-danger">Cancelar</a>
                   </div>
                 </div>
               </form>

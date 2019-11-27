@@ -40,11 +40,11 @@
             //funcion conectar
             $mysql->conectar();
             //consulta de toda la informacion
-            $seleccionInformacion = $mysql->efectuarConsulta("select teatro.obra.id as id_obra, teatro.obra.nombre from obra where id = ".$id."");
+            $seleccionInformacion = $mysql->efectuarConsulta("select teatro.personajes.id as id_personaje, teatro.personajes.nombre from personajes where id = ".$id."");
             //funcion desconectar
             $mysql->desconectar();    
             while ($resultado= mysqli_fetch_assoc($seleccionInformacion)){
-                $idObra = $resultado['id_obra'];
+                $idPersonaje = $resultado['id_personaje'];
                 $nombre = $resultado['nombre'];
             }  
     ?>
@@ -62,17 +62,17 @@
           <div class="card">
             <!-- Tab panes -->
             <div class="card-body">
-              <form class="form-horizontal form-material" method="post" action="Controlador/eliminarObra.php?id=<?php echo $id;?>">
+              <form class="form-horizontal form-material" method="post" action="Controlador/eliminarPersonaje.php?id=<?php echo $id;?>">
                   <div class="form-group">
-                    <label class="col-sm-12">Id de la obra</label>
+                    <label class="col-sm-12">Id del personaje</label>
                     <div class="col-md-12">
                       <!-- Se traen los datos y se imprimen en las opciones del select -->
-                      <input type="text" disabled="" value="<?php echo $idObra?>" class="form-control form-control-line">
+                      <input type="text" disabled="" value="<?php echo $idPersonaje?>" class="form-control form-control-line">
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label class="col-sm-12">Nombre de la obra</label>            
+                    <label class="col-sm-12">Nombre del personaje</label>            
                     <div class="col-md-12">
                       <!-- Se traen los datos y se imprimen en las opciones del select -->
                       <input type="text" disabled=" "value="<?php echo $nombre?>" class="form-control form-control-line">
@@ -80,14 +80,14 @@
                   </div>
 
                   <div class="form-group">
-                    <label class="col-sm-12">¿Esta seguro de eliminar la obra?</label>
+                    <label class="col-sm-12">¿Esta seguro de eliminar este personaje?</label>
                     <br>
                     <br>
                     <div class="col-sm-2 col-md-2">
                       <button class="btn btn-success" >Eliminar</button>
                     </div>
                     <div class="col-sm-10 col-md-4">
-                        <a href="ver_obra.php" class="btn btn-danger">Cancelar</a>
+                        <a href="ver_personaje.php" class="btn btn-danger">Cancelar</a>
                     </div>
                   </div>
               </form>

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Teatro Cotecnova - Ver obras</title>
+  <title>Teatro Cotecnova - Obras inactivas</title>
   <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
   <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
 
@@ -39,7 +39,7 @@
         //funcion conectar
         $mysql->conectar();    
          //respectivas variables donde se llama la función consultar, se incluye la respectiva consulta
-        $consulta = $mysql->efectuarConsulta("SELECT teatro.personajes.id as idPersonaje, teatro.personajes.nombre as nombre, teatro.personajes.descripcion as descripcion, teatro.actores.nombre as actor from teatro.personajes join actores on teatro.actores.id = teatro.personajes.Actores_id where estado = 1");
+        $consulta = $mysql->efectuarConsulta("SELECT teatro.personajes.id as idPersonaje, teatro.personajes.nombre as nombre, teatro.personajes.descripcion as descripcion, teatro.actores.nombre as actor from teatro.personajes join actores on teatro.actores.id = teatro.personajes.Actores_id where estado = 0");
         //funcion desconectar
         $mysql->desconectar();    
         ?>
@@ -51,7 +51,7 @@
             <div class="col-md-3 col-sm-3">
             <h2 class="ser-title">Bienvenido</h2>
             <hr class="botm-line">
-            <p>Personajes actualmente existentes</p>
+            <p>Personajes actualmente inactivas</p>
             <p>Todos los datos mostrados son los suministrados por el teatro ser&aacute;n de uso aplicativo.</p>
             </div>
         <div class="col-md-9 col-sm-9">
@@ -65,8 +65,7 @@
                             <th scope="col">Nombre del personaje</th>
                             <th scope="col">Descripcion</th>
                             <th scope="col">Actor</th>
-                            <th scope="col">Editar</th>
-                            <th scope="col">Eliminar</th>
+                            <th scope="col">Restaurar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -82,11 +81,8 @@
                             <td><?php echo $resultado['descripcion'] ?></th>
                             <td><?php echo $resultado['actor'] ?></td>
                             <td>
-                                <a href="editar_personaje.php?id=<?php echo $idPersonaje; ?>" class="btn btn-success " name="enviar">Editar</a>
-                            </td>
-                            <td> 
-                                <a href="eliminar_personaje.php?id=<?php echo $idPersonaje ?>" class="btn btn-danger" name="eliminar">Eliminar</a>
-                            </td>
+                                <a href="Controlador\activarPersonaje.php?id=<?php echo $idPersonaje; ?>" class="btn btn-info" name="enviar">Activar</a>   
+                            </td> 
                         </tr>
                         <?php
                             }
