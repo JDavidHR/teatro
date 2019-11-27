@@ -97,10 +97,10 @@
                           <td><?php echo $resultado['actor'] ?></td>                      
                           <td><?php echo $resultado['papel'] ?></td>
                           <td>
-                              <a href="editar_obra.php?id=<?php echo $id_personaje; ?>" class="btn btn-success " name="enviar">Editar</a>
+                              <a href="editar_personaje.php?id=<?php echo $id_personaje; ?>" class="btn btn-success " name="enviar">Editar</a>
                           </td>
                           <td> 
-                              <a href="eliminar_obra.php?id=<?php echo $id_personaje; ?>" class="btn btn-danger" name="eliminar">Eliminar</a>
+                              <a href="eliminar_personaje.php?id=<?php echo $id_personaje; ?>" class="btn btn-danger" name="eliminar">Eliminar</a>
                           </td>
                         </tr>
                         <?php
