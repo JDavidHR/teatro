@@ -118,7 +118,7 @@
                         while ($resultado= mysqli_fetch_assoc($seleccionPapel)){
                            //se imprime los resultados
                            ?> 
-                        <option value="<?php echo $resultado['id_papel']?>"><?php echo $resultado['papel']?></option>  
+                        <option value="<?php echo $resultado['id_tipo']?>"><?php echo $resultado['papel']?></option>  
                         <?php }?>
                     </select>
                   </div>
