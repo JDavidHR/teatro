@@ -49,7 +49,7 @@
         $mysql->desconectar();    
         ?>
                <!--service-->
-                    <section id="service" class="section-padding">
+    <section id="service" class="section-padding">
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-3">
@@ -63,43 +63,37 @@
             <!-- Tab panes -->
             <div class="card-body">
                 <form class="form-horizontal form-material">
-                <table class="table table-hover" id="ver_obra">
-                    <thead>
-                        <tr>
-                            <th scope="col">Fecha y Hora</th>
+
+
+                    <table class="table table-hover" id="ver_obra" >
+        <thead style="background-color: white;color: black; font-weight: bold;">
+            <tr>
+                <th scope="col">Fecha y Hora</th>
                             <th scope="col">Teatro</th>
                             <th scope="col">Tipo Funcion</th>
                             <th scope="col">Tipo Cliente</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <?php 
-                    //Si la consulta tiene resultados
-                    if(!empty($consulta))
-                    { 
-                        while ($resultado= mysqli_fetch_assoc($consulta))
-                        { 
-                            
-                    ?>
-                        <!-- Si la fecha de la cita esta a un dia de la fecha actual, muestra esos datos en rojo -->
-                        <tr>
-                            <td><?php echo $resultado['fecha_hora'] ?></td>
+            </tr>
+        </thead>
+        
+        <tbody >
+            <?php 
+            while ($resultado=mysqli_fetch_assoc($consulta)) {
+                $idFuncion = $resultado['idFuncion'];
+                ?>
+                <tr >
+                    <td scope="row" ><?php echo $resultado['fecha_hora'] ?></td>
                             <td><?php echo $resultado['tipo'] ?></th>
                             <td><?php echo $resultado['tipo_fun'] ?></td>                      
                             <td><?php echo $resultado['Nombre'] ?></td>
-                            <td>
-                        </tr>
-                    <?php
-                            
-                    ?>
-                       
-                    <?php
-                          }
-                        }
-                    
-                    ?>
-                    </tbody>
-                    </table>
+                </tr>
+                <?php 
+            }
+            ?>
+        </tbody>
+    </table>
+
+
+                
                   </form>
                 </div>
               </div>
