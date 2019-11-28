@@ -36,18 +36,17 @@ if(isset($_POST['enviar']) && !empty($_GET['id']) && !empty($_POST['nombre'])
     
     //variable que ejecutara la funcion consulta, pero en este caso, no usamos select sino insert para meter los datos a la respectiva table
     $actualizar = $mysql->efectuarConsulta("update teatro.reemplazos set teatro.reemplazos.nombre = '".$nombre."', teatro.reemplazos.Actores_id = '".$actor."', teatro.reemplazos.Funciones_id = '".$funcion."' where teatro.reemplazos.id = ".$idReemplazo."");
-    echo $actualizar;
     //Desconecto la conexion de la bD
     $mysql->desconectar();
     //decision para comprobar si se ejecuto, se redirige al index principal
     
     if($actualizar){
       //impresion de mensaje personalizado
-       echo "<div class=\"alert alert-success alert-dismissible\"><a href=\"../editar_reemplazo.php\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Felicidades!</strong> El reemplazo ha sido actualizado correctamente.</div>";
+       echo "<div class=\"alert alert-success alert-dismissible\"><a href=\"../ver_reemplazo.php\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Felicidades!</strong> El reemplazo ha sido actualizado correctamente.</div>";
        header( "refresh:3;url=../ver_reemplazo.php" ); 
     } else {
         //mensaje de error personalizado
-        echo "<div class=\"alert alert-warning alert-dismissible\"><a href=\"../editar_reemplazo.php\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Alerta!</strong> No se ha podido actualizar el reemplazo.</div>";
+        echo "<div class=\"alert alert-warning alert-dismissible\"><a href=\"../ver_reemplazo.php\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Alerta!</strong> No se ha podido actualizar el reemplazo.</div>";
         //redireccion
         header( "refresh:3;url=../ver_reemplazo.php" );         
     }

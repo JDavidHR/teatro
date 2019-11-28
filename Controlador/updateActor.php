@@ -38,7 +38,7 @@ if(isset($_POST['enviar']) && !empty($_GET['id']) && !empty($_POST['cedula'])
     
     
     //variable que ejecutara la funcion consulta, pero en este caso, no usamos select sino insert para meter los datos a la respectiva table
-    $actualizar = $mysql->efectuarConsulta("update teatro.actores set teatro.actores.cedula = '".$cedula."', teatro.actores.nombre = '".$nombre."', teatro.actores.fecha_nacimiento = '".$fecha."', teatro.actores.Genero_id = '".$genero."', teatro.actores.Tipo_papel_id = '".$papel."' where teatro.actores.id = '".$idActor."'");
+    $actualizar = $mysql->efectuarConsulta("update teatro.actores set teatro.actores.cedula = '".$cedula."', teatro.actores.nombre = '".$nombre."', teatro.actores.fecha_nacimiento = '".$fecha."', teatro.actores.Genero_id = '".$genero."', teatro.actores.Tipo_papel_id = '".$papel."' where teatro.actores.id = ".$idActor."");
     //Desconecto la conexion de la bD
     $mysql->desconectar();
     //decision para comprobar si se ejecuto, se redirige al index principal

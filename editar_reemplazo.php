@@ -81,8 +81,7 @@
                       <input type="text" value="<?php echo $nombre?>" class="form-control form-control-line" name="nombre" required="" onkeypress="return sololetras(event)">
                   </div>
                 </div>
-                
-                </div>
+              
                 <div class="form-group">
                   <label class="col-sm-12">Actor</label>
                   <div class="col-sm-12">
@@ -127,6 +126,7 @@
                   </div>
                 </div>
               </form>
+              </div>
             </div>
           </div>
         </div>
