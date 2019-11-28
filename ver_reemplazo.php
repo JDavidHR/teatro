@@ -86,7 +86,7 @@
                             <td><?php echo $resultado['nombre_actor'] ?></th>
                             <td><?php echo $resultado['tipo_fun'] ?></td>
                             <td>
-                                <a href="editar_personaje.php?id=<?php echo $idReemplazo; ?>" class="btn btn-success " name="enviar">Editar</a>
+                                 <a href="editar_reemplazo.php?id=<?php echo $idReemplazo; ?>" class="btn btn-success " name="enviar">Editar</a>
                             </td>
                             <td> 
                                 <a href="eliminar_Reemplazo.php?id=<?php echo $idReemplazo ?>" class="btn btn-danger" name="eliminar">Eliminar</a>
