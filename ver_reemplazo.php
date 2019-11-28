@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Teatro Cotecnova - Ver obras</title>
+  <title>Teatro Cotecnova - Ver reemplazos</title>
   <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
   <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
 
@@ -43,7 +43,7 @@
             from teatro.reemplazos 
             join tipo_funcion on teatro.tipo_funcion.id = teatro.reemplazos.Funciones_id
             join actores on teatro.actores.id = teatro.reemplazos.Actores_id 
-            where estado = 1");
+            where teatro.reemplazos.estado = 1");
         //funcion desconectar
         $mysql->desconectar();    
         ?>
@@ -66,8 +66,8 @@
                 <table class="table table-hover" id="ver_obra">
                     <thead>
                         <tr>
-                            <th scope="col">Nombre del Reemplazo</th>
-                            <th scope="col">Actor</th>
+                            <th scope="col">Nombre del Actor de Reemplazo</th>
+                            <th scope="col">Actor a Reemplazar</th>
                             <th scope="col">Funcion</th>
                             <th scope="col">Eliminar</th>
                         </tr>

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Teatro Cotecnova - Ver reemplazo inactivo</title>
+  <title>Teatro Cotecnova - Ver actor</title>
   <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
   <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
 
@@ -39,11 +39,7 @@
         //funcion conectar
         $mysql->conectar();    
          //respectivas variables donde se llama la función consultar, se incluye la respectiva consulta
-        $consulta = $mysql->efectuarConsulta("SELECT teatro.reemplazos.id as idReemplazo, teatro.reemplazos.nombre as nombre, teatro.reemplazos.Actores_id, teatro.reemplazos.Funciones_id,teatro.actores.id,teatro.actores.nombre as nombre_actor, teatro.tipo_funcion.id as tipo_fun 
-            from teatro.reemplazos 
-            join tipo_funcion on teatro.tipo_funcion.id = teatro.reemplazos.Funciones_id
-            join actores on teatro.actores.id = teatro.reemplazos.Actores_id 
-            where teatro.reemplazos.estado = 0");
+        $consulta = $mysql->efectuarConsulta("SELECT teatro.actores.id as idActor, teatro.actores.cedula as cedula, teatro.actores.nombre as nombre, teatro.actores.fecha_nacimiento as fecha, teatro.genero.nombre as genero, teatro.tipo_papel.nombre as papel from teatro.actores join teatro.genero on teatro.genero.id = teatro.actores.Genero_id join teatro.tipo_papel on teatro.tipo_papel.id = teatro.actores.Tipo_papel_id where estado = 1");
         //funcion desconectar
         $mysql->desconectar();    
         ?>
@@ -55,7 +51,7 @@
             <div class="col-md-3 col-sm-3">
             <h2 class="ser-title">Bienvenido</h2>
             <hr class="botm-line">
-            <p>Reemplazos actualmente existentes</p>
+            <p>Actores actualmente existentes</p>
             <p>Todos los datos mostrados son los suministrados por el teatro ser&aacute;n de uso aplicativo.</p>
             </div>
         <div class="col-md-9 col-sm-9">
@@ -66,9 +62,12 @@
                 <table class="table table-hover" id="ver_obra">
                     <thead>
                         <tr>
-                            <th scope="col">Nombre del Reemplazo</th>
-                            <th scope="col">Actor</th>
-                            <th scope="col">Funcion</th>
+                            <th scope="col">Cedula</th>
+                            <th scope="col">Nombres y apellidos</th>
+                            <th scope="col">Fecha de nacimiento</th>
+                            <th scope="col">Genero</th>
+                            <th scope="col">Papel</th>
+                            <th scope="col">Editar</th>
                             <th scope="col">Eliminar</th>
                         </tr>
                     </thead>
@@ -76,16 +75,21 @@
                     <!-- Llamado al ciclo while donde vamos a recorrer un array asociativo con la consulta declarada anteriormente -->
                     <?php 
                         while ($resultado= mysqli_fetch_assoc($consulta)){  
-                        $idReemplazo = $resultado['idReemplazo'];                       
+                        $idActor = $resultado['idActor'];                       
                     ?>
                     
                         <tr>
                             <!-- Se traen los datos y se imprimen en las opciones del select -->
-                            <td><?php echo $resultado['nombre'] ?></td>
-                            <td><?php echo $resultado['nombre_actor'] ?></th>
-                            <td><?php echo $resultado['tipo_fun'] ?></td>
+                            <td><?php echo $resultado['cedula'] ?></td>
+                            <td><?php echo $resultado['nombre'] ?></th>
+                            <td><?php echo $resultado['fecha'] ?></td>
+                            <td><?php echo $resultado['genero'] ?></td>
+                            <td><?php echo $resultado['papel'] ?></td>
+                            <td>
+                                <a href="editar_actor.php?id=<?php echo $idActor; ?>" class="btn btn-success " name="enviar">Editar</a>
+                            </td>
                             <td> 
-                                <a href="eliminar_Reemplazo.php?id=<?php echo $idReemplazo ?>" class="btn btn-danger" name="eliminar">Eliminar</a>
+                                <a href="eliminar_actor.php?id=<?php echo $idActor ?>" class="btn btn-danger" name="eliminar">Eliminar</a>
                             </td>
                         </tr>
                         <?php

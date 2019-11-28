@@ -61,6 +61,14 @@
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actores</a>
+                                <div class="dropdown-menu " aria-labelledby="dropdown1">
+                                  <a class="dropdown-item btn" href="crear_actor.php">Ingresar un actor</a>
+                                  <a class="dropdown-item btn" href="ver_actor.php">Ver actores</a>
+                                  <a class="dropdown-item btn" href="ver_actor_inactivo.php">Ver actores inactivos</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reemplazos</a>
                                 <div class="dropdown-menu " aria-labelledby="dropdown1">
                                   <a class="dropdown-item btn" href="crear_reemplazo.php">Ingresar un reemplazo</a>

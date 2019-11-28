@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Teatro Cotecnova - Editar personaje</title>
+  <title>Teatro Cotecnova - Editar actor</title>
   <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
   <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
 
@@ -39,17 +39,21 @@
     //funcion conectar
     $mysql->conectar();
     //consulta de toda la informacion
-    $seleccionInformacion = $mysql->efectuarConsulta("SELECT teatro.personajes.id as id_personaje, teatro.personajes.nombre as nombre, teatro.personajes.descripcion as descripcion, teatro.actores.id as id_actor, teatro.actores.nombre as actor from teatro.personajes join actores on teatro.actores.id = teatro.personajes.Actores_id WHERE teatro.personajes.id = ".$id."");
+    $seleccionInformacion = $mysql->efectuarConsulta("SELECT teatro.actores.id as id_actor, teatro.actores.cedula as cedula, teatro.actores.nombre as nombre, teatro.actores.fecha_nacimiento as fecha, teatro.genero.id as id_genero, teatro.genero.nombre as genero, teatro.tipo_papel.id as id_papel, teatro.tipo_papel.nombre as papel from teatro.actores join teatro.genero on teatro.genero.id = teatro.actores.Genero_id join teatro.tipo_papel on teatro.tipo_papel.id = teatro.actores.Tipo_papel_id where teatro.actores.id =  ".$id."");
 
     while ($resultado= mysqli_fetch_assoc($seleccionInformacion)){
-      $nombrePersonaje = $resultado['nombre'];
-      $descripcion = $resultado['descripcion'];
-      $actor = $resultado['actor'];
+      $cedula = $resultado['cedula'];
+      $nombre = $resultado['nombre'];
+      $fecha = $resultado['fecha'];
+      $genero = $resultado['genero'];
+      $papel = $resultado['papel'];
 
       $id_actor = $resultado['id_actor'];
-      $id_personaje = $resultado['id_personaje'];
+      $id_genero = $resultado['id_genero'];
+      $id_papel = $resultado['id_papel'];
     } 
-     $seleccionActor = $mysql->efectuarConsulta("SELECT teatro.actores.id,teatro.actores.nombre from actores");
+     $seleccionGenero = $mysql->efectuarConsulta("SELECT teatro.genero.id as id_genero, teatro.genero.nombre as genero from genero");
+     $seleccionPapel = $mysql->efectuarConsulta("SELECT teatro.tipo_papel.id as id_tipo, teatro.tipo_papel.nombre as papel from tipo_papel");
     //funcion desconectar
     $mysql->desconectar();    
   ?>
@@ -68,41 +72,63 @@
           <div class="card">
             <!-- Tab panes -->
             <div class="card-body">
-              <form class="form-horizontal form-material" method="Post" action="Controlador/updatePersonaje.php?id=<?php echo $id; ?>">
+              <form class="form-horizontal form-material" method="Post" action="Controlador/updateActor.php?id=<?php echo $id; ?>">
                 <div class="form-group">
-                  <label class="col-sm-12">Nombre del personaje</label>            
+                  <label class="col-sm-12">Cedula</label>            
                   <div class="col-md-12">
-                      <input type="text" value="<?php echo $nombrePersonaje?>" class="form-control form-control-line" name="nombrePersonaje" required="" onkeypress="return sololetras(event)">
+                      <input type="text" value="<?php echo $cedula?>" class="form-control form-control-line" name="cedula" required="" onkeypress="return sololetras(event)">
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-12">Descripcion</label>            
+                  <label class="col-sm-12">Nombres y apellidos</label>            
                   <div class="col-md-12">
-                      <input type="text" value="<?php echo $descripcion?>" class="form-control form-control-line" name="descripcion" required="" onkeypress="return sololetras(event)">
+                      <input type="text" value="<?php echo $nombre?>" class="form-control form-control-line" name="nombre" required="" onkeypress="return sololetras(event)">
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-12">Actor</label>
+                  <label class="col-sm-12">Fecha de nacimiento</label>            
+                  <div class="col-md-12">
+                      <input type="date" value="<?php echo $fecha?>" class="form-control form-control-line" name="fecha" required="">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-12">Genero</label>
                   <div class="col-sm-12">
-                      <select class="form-control form-control-line" name="nombreActor">
-                          <option value="<?php echo $id_actor?>" selected="true"><?php echo $actor?></option>
-                          <option disabled>Seleccione un actor</option>
+                      <select class="form-control form-control-line" name="genero">
+                          <option value="<?php echo $id_genero?>" selected="true"><?php echo $genero?></option>
+                          <option disabled>Seleccione un genero</option>
                         <?php 
                          //se recorre el resultado de la consutla de estado civil
-                        while ($resultado= mysqli_fetch_assoc($seleccionActor)){
+                        while ($resultado= mysqli_fetch_assoc($seleccionGenero)){
                            //se imprime los resultados
                            ?> 
-                        <option value="<?php echo $resultado['id']?>"><?php echo $resultado['nombre']?></option>  
+                        <option value="<?php echo $resultado['id_genero']?>"><?php echo $resultado['genero']?></option>  
                         <?php }?>
                     </select>
                   </div>
-                </div>              
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-12">Papel</label>
+                  <div class="col-sm-12">
+                      <select class="form-control form-control-line" name="tipo_papel">
+                          <option value="<?php echo $id_papel?>" selected="true"><?php echo $papel?></option>
+                          <option disabled>Seleccione un tipo de papel</option>
+                        <?php 
+                         //se recorre el resultado de la consutla de estado civil
+                        while ($resultado= mysqli_fetch_assoc($seleccionPapel)){
+                           //se imprime los resultados
+                           ?> 
+                        <option value="<?php echo $resultado['id_papel']?>"><?php echo $resultado['papel']?></option>  
+                        <?php }?>
+                    </select>
+                  </div>
+                </div>             
                 <div class="form-group">
                   <div class="col-sm-3 col-md-2">
                     <button class="btn btn-success" name="enviar">Modificar</button>
                   </div>
                   <div class="col-sm-9 col-md-4">
-                    <a href="ver_personaje.php" class="btn btn-danger">Cancelar</a>
+                    <a href="ver_actor.php" class="btn btn-danger">Cancelar</a>
                   </div>
                 </div>
               </form>

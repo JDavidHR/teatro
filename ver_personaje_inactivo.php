@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Teatro Cotecnova - Obras inactivas</title>
+  <title>Teatro Cotecnova - Personajes inactivos</title>
   <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
   <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
 
@@ -39,7 +39,7 @@
         //funcion conectar
         $mysql->conectar();    
          //respectivas variables donde se llama la función consultar, se incluye la respectiva consulta
-        $consulta = $mysql->efectuarConsulta("SELECT teatro.personajes.id as idPersonaje, teatro.personajes.nombre as nombre, teatro.personajes.descripcion as descripcion, teatro.actores.nombre as actor from teatro.personajes join actores on teatro.actores.id = teatro.personajes.Actores_id where estado = 0");
+        $consulta = $mysql->efectuarConsulta("SELECT teatro.personajes.id as idPersonaje, teatro.personajes.nombre as nombre, teatro.personajes.descripcion as descripcion, teatro.actores.nombre as actor from teatro.personajes join actores on teatro.actores.id = teatro.personajes.Actores_id where teatro.personajes.estado = 0");
         //funcion desconectar
         $mysql->desconectar();    
         ?>
